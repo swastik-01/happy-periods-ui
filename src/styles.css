@@ -1,0 +1,208 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-plum: var(--plum);
+  --color-plum-deep: var(--plum-deep);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-pink: var(--pink);
+  --color-cream: var(--cream);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Anton", "Bebas Neue", sans-serif;
+  --font-sans: "DM Sans", "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand - Softer Palette */
+  --plum-deep: oklch(0.25 0.05 320); /* Softer dark plum */
+  --plum: oklch(0.35 0.06 320);      /* Muted plum */
+  --coral: oklch(0.70 0.12 20);      /* Softer blush/coral */
+  --coral-soft: oklch(0.82 0.08 22); /* Very soft coral */
+  --pink: oklch(0.88 0.06 0);        /* Gentle pink */
+  --cream: oklch(0.98 0.01 80);      /* Warm cream */
+
+  /* Light Mode Variables */
+  --background: var(--cream);
+  --foreground: var(--plum-deep);
+  
+  --card: oklch(1 0 0); /* Pure white for cards in light mode */
+  --card-foreground: var(--plum-deep);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--plum-deep);
+  
+  --primary: var(--coral);
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.92 0.02 320); /* Light lavender/grey */
+  --secondary-foreground: var(--plum-deep);
+  
+  --muted: oklch(0.92 0.02 320);
+  --muted-foreground: oklch(0.45 0.03 320);
+  
+  --accent: var(--coral-soft);
+  --accent-foreground: var(--plum-deep);
+  
+  --destructive: oklch(0.60 0.15 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  
+  --border: oklch(0.88 0.02 320);
+  --input: oklch(0.88 0.02 320);
+  --ring: var(--coral);
+
+  --chart-1: var(--coral);
+  --chart-2: var(--pink);
+  --chart-3: var(--plum);
+  --chart-4: oklch(0.7 0.10 200);
+  --chart-5: oklch(0.65 0.10 280);
+
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--plum-deep);
+  --sidebar-primary: var(--coral);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.92 0.02 320);
+  --sidebar-accent-foreground: var(--plum-deep);
+  --sidebar-border: oklch(0.88 0.02 320);
+  --sidebar-ring: var(--coral);
+}
+
+.dark {
+  /* Dark Mode Variables */
+  --background: var(--plum-deep);
+  --foreground: var(--cream);
+  
+  --card: var(--plum);
+  --card-foreground: var(--cream);
+  
+  --popover: var(--plum-deep);
+  --popover-foreground: var(--cream);
+  
+  --primary: var(--coral);
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.30 0.05 320);
+  --secondary-foreground: var(--cream);
+  
+  --muted: oklch(0.30 0.05 320);
+  --muted-foreground: oklch(0.80 0.02 320);
+  
+  --accent: var(--plum);
+  --accent-foreground: var(--cream);
+  
+  --destructive: oklch(0.50 0.15 27);
+  --destructive-foreground: var(--cream);
+  
+  --border: oklch(0.35 0.06 320);
+  --input: oklch(0.35 0.06 320);
+  --ring: var(--coral);
+
+  --chart-1: var(--coral);
+  --chart-2: var(--pink);
+  --chart-3: var(--plum);
+  --chart-4: oklch(0.7 0.10 200);
+  --chart-5: oklch(0.65 0.10 280);
+
+  --sidebar: var(--plum-deep);
+  --sidebar-foreground: var(--cream);
+  --sidebar-primary: var(--coral);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: var(--plum);
+  --sidebar-accent-foreground: var(--cream);
+  --sidebar-border: oklch(0.35 0.06 320);
+  --sidebar-ring: var(--coral);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  .text-balance { text-wrap: balance; }
+  .bg-plum { background-color: var(--plum); }
+  .bg-plum-deep { background-color: var(--plum-deep); }
+  .bg-coral { background-color: var(--coral); }
+  .bg-cream { background-color: var(--cream); }
+  .text-coral { color: var(--coral); }
+  .text-cream { color: var(--cream); }
+  .text-plum { color: var(--plum); }
+  .border-coral { border-color: var(--coral); }
+
+  .marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
