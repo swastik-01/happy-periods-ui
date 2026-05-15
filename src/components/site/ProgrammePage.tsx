@@ -1,7 +1,14 @@
 import { SiteLayout } from "./Layout";
 import { PageHero } from "./PageHero";
-import { ApplyForm } from "./ApplyForm";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { PROGRAMME_REGISTER_FORM_URL } from "@/lib/forms";
+
+type TextSection = {
+  title?: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
 
 export type ProgrammeData = {
   slug: string;
@@ -10,74 +17,164 @@ export type ProgrammeData = {
   eyebrow: string;
   intro: string;
   hero: string;
-  whatWeDo: { heading: string; bullets: string[]; body?: string };
-  impact: { stats: { num: string; label: string }[]; images: string[]; story?: string };
-  formFields?: { name: string; label: string; type?: string; required?: boolean; rows?: number }[];
+  whatWeDo: TextSection & { heading: string };
+  impact: TextSection & {
+    heading?: string;
+    sections?: TextSection[];
+    stats?: { num: string; label: string }[];
+    images?: string[];
+  };
 };
 
 export function ProgrammePage({ data }: { data: ProgrammeData }) {
+  const whatWeDoParagraphs = data.whatWeDo.paragraphs ?? [];
+  const impactParagraphs = data.impact.paragraphs ?? [];
+  const impactSections = data.impact.sections ?? [];
+  const stats = data.impact.stats ?? [];
+  const images = data.impact.images ?? [];
+
   return (
     <SiteLayout>
-      <PageHero eyebrow={data.eyebrow} title={data.title} highlight={data.highlight} image={data.hero}>
+      <PageHero
+        eyebrow={data.eyebrow}
+        title={data.title}
+        highlight={data.highlight}
+        image={data.hero}
+      >
         {data.intro}
       </PageHero>
 
       <section id="what-we-do" className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
-          <div>
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="lg:col-span-4">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
-            <h2 className="font-display text-4xl lg:text-5xl uppercase mt-3">{data.whatWeDo.heading}</h2>
-            {data.whatWeDo.body && <p className="mt-5 text-muted-foreground leading-relaxed">{data.whatWeDo.body}</p>}
+            <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+              {data.whatWeDo.heading}
+            </h2>
           </div>
-          <ul className="space-y-4">
-            {data.whatWeDo.bullets.map((b, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex gap-4 p-5 rounded-2xl bg-cream border border-border"
-              >
-                <span className="font-display text-3xl text-coral">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-foreground">{b}</span>
-              </motion.li>
+          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-8">
+            {whatWeDoParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
-          </ul>
+            {data.whatWeDo.bullets && (
+              <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+                {data.whatWeDo.bullets.map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="rounded-[8px] border border-border bg-cream p-5 text-base leading-relaxed text-foreground"
+                  >
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </section>
 
-      <section id="impact" className="bg-plum text-cream py-20">
+      <section id="impact" className="bg-plum py-20 text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Impact</span>
-          <h2 className="font-display text-4xl lg:text-5xl uppercase mt-3">By the numbers</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-            {data.impact.stats.map((s) => (
-              <div key={s.label} className="bg-cream/5 border border-cream/10 p-6 rounded-2xl">
-                <div className="font-display text-5xl text-coral">{s.num}</div>
-                <div className="text-xs uppercase tracking-[0.2em] mt-2 text-cream/70">{s.label}</div>
-              </div>
-            ))}
-          </div>
-          {data.impact.images.length > 0 && (
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
-              {data.impact.images.map((img, i) => (
-                <img key={i} src={img} alt="Impact moment" className="rounded-2xl aspect-[4/3] object-cover w-full" />
+          <span className="text-xs uppercase tracking-[0.3em] text-coral">Impact</span>
+          <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+            {data.impact.heading ?? "On-ground change"}
+          </h2>
+
+          {stats.length > 0 && (
+            <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-[8px] border border-cream/10 bg-cream/5 p-6"
+                >
+                  <div className="font-display text-5xl text-coral">{stat.num}</div>
+                  <div className="mt-2 text-xs uppercase tracking-[0.2em] text-cream/70">
+                    {stat.label}
+                  </div>
+                </div>
               ))}
             </div>
           )}
-          {data.impact.story && <p className="mt-8 text-cream/80 max-w-3xl leading-relaxed">{data.impact.story}</p>}
+
+          <div className="mt-10 max-w-4xl space-y-5 text-lg leading-relaxed text-cream/80">
+            {impactParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+
+            {data.impact.bullets && (
+              <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+                {data.impact.bullets.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-[8px] border border-cream/10 bg-cream/5 p-4 text-base text-cream"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {impactSections.map((section) => (
+              <div key={section.title} className="pt-4">
+                {section.title && (
+                  <h3 className="font-display text-3xl uppercase text-coral">{section.title}</h3>
+                )}
+                <div className="mt-4 space-y-5">
+                  {section.paragraphs?.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                {section.bullets && (
+                  <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                    {section.bullets.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-[8px] border border-cream/10 bg-cream/5 p-4 text-base text-cream"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {images.length > 0 && (
+            <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
+              {images.map((img, index) => (
+                <img
+                  key={img}
+                  src={img}
+                  alt={`Impact moment ${index + 1}`}
+                  className="aspect-[4/3] w-full rounded-[8px] object-cover"
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      <section id="apply" className="py-20 bg-cream">
+      <section id="apply" className="bg-cream py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.3em] text-coral">Apply Now</span>
-          <h2 className="font-display text-4xl lg:text-5xl uppercase mt-3">Get this programme at your space</h2>
-          <p className="mt-4 text-muted-foreground">Tell us a bit about yourself and we'll be in touch within 48 hours.</p>
-          <div className="mt-8">
-            <ApplyForm programme={data.title} fields={data.formFields} />
-          </div>
+          <span className="text-xs uppercase tracking-[0.3em] text-coral">Register here</span>
+          <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+            Get this programme at your space
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Register through our Google Form and we'll be in touch within 48 hours.
+          </p>
+          <a
+            href={PROGRAMME_REGISTER_FORM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
+          >
+            Register now <ArrowRight size={18} />
+          </a>
         </div>
       </section>
     </SiteLayout>

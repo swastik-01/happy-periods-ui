@@ -25,11 +25,18 @@ import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgrammesIndexRouteImport } from './routes/programmes.index'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as ProgrammesYogaRouteImport } from './routes/programmes.yoga'
 import { Route as ProgrammesWorkplaceRouteImport } from './routes/programmes.workplace'
 import { Route as ProgrammesTrainTheTrainerRouteImport } from './routes/programmes.train-the-trainer'
 import { Route as ProgrammesSchoolsRouteImport } from './routes/programmes.schools'
 import { Route as ProgrammesImpactPartnerRouteImport } from './routes/programmes.impact-partner'
+import { Route as ProgrammesCsrRouteImport } from './routes/programmes.csr'
+import { Route as EventsSchoolsRouteImport } from './routes/events.schools'
+import { Route as EventsNmmcRouteImport } from './routes/events.nmmc'
+import { Route as EventsMijwanRouteImport } from './routes/events.mijwan'
+import { Route as EventsCsrRouteImport } from './routes/events.csr'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 
@@ -113,6 +120,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesIndexRoute = ProgrammesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProgrammesRoute,
+} as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EventsRoute,
+} as any)
 const ProgrammesYogaRoute = ProgrammesYogaRouteImport.update({
   id: '/yoga',
   path: '/yoga',
@@ -139,6 +156,31 @@ const ProgrammesImpactPartnerRoute = ProgrammesImpactPartnerRouteImport.update({
   path: '/impact-partner',
   getParentRoute: () => ProgrammesRoute,
 } as any)
+const ProgrammesCsrRoute = ProgrammesCsrRouteImport.update({
+  id: '/csr',
+  path: '/csr',
+  getParentRoute: () => ProgrammesRoute,
+} as any)
+const EventsSchoolsRoute = EventsSchoolsRouteImport.update({
+  id: '/schools',
+  path: '/schools',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EventsNmmcRoute = EventsNmmcRouteImport.update({
+  id: '/nmmc',
+  path: '/nmmc',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EventsMijwanRoute = EventsMijwanRouteImport.update({
+  id: '/mijwan',
+  path: '/mijwan',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EventsCsrRoute = EventsCsrRouteImport.update({
+  id: '/csr',
+  path: '/csr',
+  getParentRoute: () => EventsRoute,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin/login',
   path: '/admin/login',
@@ -155,7 +197,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -169,36 +211,48 @@ export interface FileRoutesByFullPath {
   '/why-us': typeof WhyUsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/events/csr': typeof EventsCsrRoute
+  '/events/mijwan': typeof EventsMijwanRoute
+  '/events/nmmc': typeof EventsNmmcRoute
+  '/events/schools': typeof EventsSchoolsRoute
+  '/programmes/csr': typeof ProgrammesCsrRoute
   '/programmes/impact-partner': typeof ProgrammesImpactPartnerRoute
   '/programmes/schools': typeof ProgrammesSchoolsRoute
   '/programmes/train-the-trainer': typeof ProgrammesTrainTheTrainerRoute
   '/programmes/workplace': typeof ProgrammesWorkplaceRoute
   '/programmes/yoga': typeof ProgrammesYogaRoute
+  '/events/': typeof EventsIndexRoute
+  '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
   '/news': typeof NewsRoute
   '/privacy': typeof PrivacyRoute
-  '/programmes': typeof ProgrammesRouteWithChildren
   '/resources': typeof ResourcesRoute
   '/terms': typeof TermsRoute
   '/what-we-do': typeof WhatWeDoRoute
   '/why-us': typeof WhyUsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/events/csr': typeof EventsCsrRoute
+  '/events/mijwan': typeof EventsMijwanRoute
+  '/events/nmmc': typeof EventsNmmcRoute
+  '/events/schools': typeof EventsSchoolsRoute
+  '/programmes/csr': typeof ProgrammesCsrRoute
   '/programmes/impact-partner': typeof ProgrammesImpactPartnerRoute
   '/programmes/schools': typeof ProgrammesSchoolsRoute
   '/programmes/train-the-trainer': typeof ProgrammesTrainTheTrainerRoute
   '/programmes/workplace': typeof ProgrammesWorkplaceRoute
   '/programmes/yoga': typeof ProgrammesYogaRoute
+  '/events': typeof EventsIndexRoute
+  '/programmes': typeof ProgrammesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -206,7 +260,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/donate': typeof DonateRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/get-involved': typeof GetInvolvedRoute
@@ -220,11 +274,18 @@ export interface FileRoutesById {
   '/why-us': typeof WhyUsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/events/csr': typeof EventsCsrRoute
+  '/events/mijwan': typeof EventsMijwanRoute
+  '/events/nmmc': typeof EventsNmmcRoute
+  '/events/schools': typeof EventsSchoolsRoute
+  '/programmes/csr': typeof ProgrammesCsrRoute
   '/programmes/impact-partner': typeof ProgrammesImpactPartnerRoute
   '/programmes/schools': typeof ProgrammesSchoolsRoute
   '/programmes/train-the-trainer': typeof ProgrammesTrainTheTrainerRoute
   '/programmes/workplace': typeof ProgrammesWorkplaceRoute
   '/programmes/yoga': typeof ProgrammesYogaRoute
+  '/events/': typeof EventsIndexRoute
+  '/programmes/': typeof ProgrammesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -247,36 +308,48 @@ export interface FileRouteTypes {
     | '/why-us'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/events/csr'
+    | '/events/mijwan'
+    | '/events/nmmc'
+    | '/events/schools'
+    | '/programmes/csr'
     | '/programmes/impact-partner'
     | '/programmes/schools'
     | '/programmes/train-the-trainer'
     | '/programmes/workplace'
     | '/programmes/yoga'
+    | '/events/'
+    | '/programmes/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/donate'
-    | '/events'
     | '/faq'
     | '/gallery'
     | '/get-involved'
     | '/impact'
     | '/news'
     | '/privacy'
-    | '/programmes'
     | '/resources'
     | '/terms'
     | '/what-we-do'
     | '/why-us'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/events/csr'
+    | '/events/mijwan'
+    | '/events/nmmc'
+    | '/events/schools'
+    | '/programmes/csr'
     | '/programmes/impact-partner'
     | '/programmes/schools'
     | '/programmes/train-the-trainer'
     | '/programmes/workplace'
     | '/programmes/yoga'
+    | '/events'
+    | '/programmes'
   id:
     | '__root__'
     | '/'
@@ -297,11 +370,18 @@ export interface FileRouteTypes {
     | '/why-us'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/events/csr'
+    | '/events/mijwan'
+    | '/events/nmmc'
+    | '/events/schools'
+    | '/programmes/csr'
     | '/programmes/impact-partner'
     | '/programmes/schools'
     | '/programmes/train-the-trainer'
     | '/programmes/workplace'
     | '/programmes/yoga'
+    | '/events/'
+    | '/programmes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -309,7 +389,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   DonateRoute: typeof DonateRoute
-  EventsRoute: typeof EventsRoute
+  EventsRoute: typeof EventsRouteWithChildren
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   GetInvolvedRoute: typeof GetInvolvedRoute
@@ -439,6 +519,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/': {
+      id: '/programmes/'
+      path: '/'
+      fullPath: '/programmes/'
+      preLoaderRoute: typeof ProgrammesIndexRouteImport
+      parentRoute: typeof ProgrammesRoute
+    }
+    '/events/': {
+      id: '/events/'
+      path: '/'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof EventsRoute
+    }
     '/programmes/yoga': {
       id: '/programmes/yoga'
       path: '/yoga'
@@ -474,6 +568,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgrammesImpactPartnerRouteImport
       parentRoute: typeof ProgrammesRoute
     }
+    '/programmes/csr': {
+      id: '/programmes/csr'
+      path: '/csr'
+      fullPath: '/programmes/csr'
+      preLoaderRoute: typeof ProgrammesCsrRouteImport
+      parentRoute: typeof ProgrammesRoute
+    }
+    '/events/schools': {
+      id: '/events/schools'
+      path: '/schools'
+      fullPath: '/events/schools'
+      preLoaderRoute: typeof EventsSchoolsRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/events/nmmc': {
+      id: '/events/nmmc'
+      path: '/nmmc'
+      fullPath: '/events/nmmc'
+      preLoaderRoute: typeof EventsNmmcRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/events/mijwan': {
+      id: '/events/mijwan'
+      path: '/mijwan'
+      fullPath: '/events/mijwan'
+      preLoaderRoute: typeof EventsMijwanRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/events/csr': {
+      id: '/events/csr'
+      path: '/csr'
+      fullPath: '/events/csr'
+      preLoaderRoute: typeof EventsCsrRouteImport
+      parentRoute: typeof EventsRoute
+    }
     '/admin/login': {
       id: '/admin/login'
       path: '/admin/login'
@@ -491,20 +620,43 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface EventsRouteChildren {
+  EventsCsrRoute: typeof EventsCsrRoute
+  EventsMijwanRoute: typeof EventsMijwanRoute
+  EventsNmmcRoute: typeof EventsNmmcRoute
+  EventsSchoolsRoute: typeof EventsSchoolsRoute
+  EventsIndexRoute: typeof EventsIndexRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsCsrRoute: EventsCsrRoute,
+  EventsMijwanRoute: EventsMijwanRoute,
+  EventsNmmcRoute: EventsNmmcRoute,
+  EventsSchoolsRoute: EventsSchoolsRoute,
+  EventsIndexRoute: EventsIndexRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
+
 interface ProgrammesRouteChildren {
+  ProgrammesCsrRoute: typeof ProgrammesCsrRoute
   ProgrammesImpactPartnerRoute: typeof ProgrammesImpactPartnerRoute
   ProgrammesSchoolsRoute: typeof ProgrammesSchoolsRoute
   ProgrammesTrainTheTrainerRoute: typeof ProgrammesTrainTheTrainerRoute
   ProgrammesWorkplaceRoute: typeof ProgrammesWorkplaceRoute
   ProgrammesYogaRoute: typeof ProgrammesYogaRoute
+  ProgrammesIndexRoute: typeof ProgrammesIndexRoute
 }
 
 const ProgrammesRouteChildren: ProgrammesRouteChildren = {
+  ProgrammesCsrRoute: ProgrammesCsrRoute,
   ProgrammesImpactPartnerRoute: ProgrammesImpactPartnerRoute,
   ProgrammesSchoolsRoute: ProgrammesSchoolsRoute,
   ProgrammesTrainTheTrainerRoute: ProgrammesTrainTheTrainerRoute,
   ProgrammesWorkplaceRoute: ProgrammesWorkplaceRoute,
   ProgrammesYogaRoute: ProgrammesYogaRoute,
+  ProgrammesIndexRoute: ProgrammesIndexRoute,
 }
 
 const ProgrammesRouteWithChildren = ProgrammesRoute._addFileChildren(
@@ -516,7 +668,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   DonateRoute: DonateRoute,
-  EventsRoute: EventsRoute,
+  EventsRoute: EventsRouteWithChildren,
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   GetInvolvedRoute: GetInvolvedRoute,

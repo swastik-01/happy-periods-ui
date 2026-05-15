@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Heart, ChevronDown } from "lucide-react";
+import { Menu, X, Heart, ChevronDown, Users } from "lucide-react";
 import { NAV } from "./nav-config";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-main.svg";
 import { ThemeToggle } from "../theme-toggle";
 
 const LOGO = logo;
@@ -13,25 +13,25 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-36 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 text-foreground group shrink-0">
-          <img src={LOGO} alt="Safe n' Happy Periods" width={44} height={44} className="w-11 h-11 rounded-full bg-cream p-0.5 object-contain group-hover:scale-105 transition" />
-          <span className="hidden sm:flex flex-col leading-none">
-            <span className="font-display text-xl tracking-tight uppercase">
-              Safe <span className="text-primary">N'</span> Happy
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Periods</span>
-          </span>
+          <img src={LOGO} alt="Safe n' Happy Periods" width={320} height={94} className="h-20 w-56 object-contain sm:h-24 sm:w-72 lg:h-28 lg:w-80 group-hover:scale-105 transition" />
         </Link>
 
         <nav className="hidden xl:flex items-center gap-1">
-          {NAV.map((item) => (
+          {NAV.filter((item) => item.label !== "Get Involved").map((item) => (
             <NavTrigger key={item.label} item={item} />
           ))}
         </nav>
 
-        <div className="hidden xl:flex shrink-0 items-center gap-4">
+        <div className="hidden xl:flex shrink-0 items-center gap-3">
           <ThemeToggle />
+          <Link
+            to="/get-involved"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:scale-105 transition shadow-lg shadow-primary/30"
+          >
+            <Users size={14}/> Get Involved
+          </Link>
           <Link
             to="/donate"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:scale-105 transition shadow-lg shadow-primary/30"
@@ -51,7 +51,7 @@ export function Header() {
       {open && (
         <div className="xl:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 space-y-1">
-            {NAV.map((item) => (
+            {NAV.filter((item) => item.label !== "Get Involved").map((item) => (
               <div key={item.label} className="border-b border-border/50">
                 {item.children ? (
                   <>
@@ -95,6 +95,13 @@ export function Header() {
               className="block text-center bg-primary text-primary-foreground py-3 rounded-full font-semibold mt-4"
             >
               <Heart size={14} className="inline mr-1"/> Donate
+            </Link>
+            <Link
+              to="/get-involved"
+              onClick={() => setOpen(false)}
+              className="block text-center bg-primary text-primary-foreground py-3 rounded-full font-semibold mt-3"
+            >
+              <Users size={14} className="inline mr-1"/> Get Involved
             </Link>
           </div>
         </div>

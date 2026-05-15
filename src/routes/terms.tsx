@@ -32,7 +32,7 @@ function Terms() {
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">2. Use of content</h2>
             <p>All content — words, images, branding — belongs to Amodini Foundation / Safe n' Happy Periods unless credited. You may share with attribution; commercial reuse requires permission.</p>
           </div>
-          <div>
+          <div id="cancellation-refunds">
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">3. Donations</h2>
             <p>Donations made to SNHP are voluntary and non-refundable except in cases of duplicate or fraudulent transactions. Donations above ₹500 are eligible for 80G tax exemption (India). You will receive your certificate by email within 5–7 working days.</p>
           </div>

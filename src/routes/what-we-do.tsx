@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { ArrowRight } from "lucide-react";
-import workshop from "@/assets/home/workshop.jpg";
+import { PROGRAMME_REGISTER_FORM_URL } from "@/lib/forms";
+import workshop from "@/assets/home/outreach.jpg";
 import field from "@/assets/home/field.jpg";
 import stage from "@/assets/home/stage.jpg";
 import park from "@/assets/home/park.jpg";
@@ -11,9 +12,15 @@ export const Route = createFileRoute("/what-we-do")({
   head: () => ({
     meta: [
       { title: "What We Do — Safe n' Happy Periods" },
-      { name: "description", content: "Workshops, Project RED, POSH training, and pad donation drives." },
+      {
+        name: "description",
+        content: "Workshops, Project RED, POSH training, and pad donation drives.",
+      },
       { property: "og:title", content: "What We Do — Safe n' Happy Periods" },
-      { property: "og:description", content: "Workshops, Project RED, POSH training, and pad donation drives." },
+      {
+        property: "og:description",
+        content: "Workshops, Project RED, POSH training, and pad donation drives.",
+      },
       { property: "og:image", content: workshop },
     ],
   }),
@@ -26,15 +33,15 @@ const programs = [
     title: "Periods Awareness Workshops",
     body: "From first periods to menopause, our workshops make menstrual health make sense — across schools, colleges, and rural communities.",
     cta: "Schedule Workshop",
-    href: "https://forms.gle/w11UiRFYjHhaVkPeA",
+    href: PROGRAMME_REGISTER_FORM_URL,
     img: field,
   },
   {
     eyebrow: "02 — Train the Trainers",
     title: "Project RED",
     body: "Equipping individuals to lead informed, stigma-free, and inclusive conversations around menstruation. Be the reason someone finally understands periods.",
-    cta: "I'm interested",
-    href: "https://forms.gle/4tLEqUJ1Y3AXaCBPA",
+    cta: "Register here",
+    href: PROGRAMME_REGISTER_FORM_URL,
     img: stage,
   },
   {
@@ -42,7 +49,7 @@ const programs = [
     title: "POSH Sessions",
     body: "We simplify the law, clear up the grey areas, and build a culture where safety, respect, and accountability are non-negotiable.",
     cta: "Book a POSH Session",
-    href: "https://forms.gle/CYHFfe5BaSQoTC16A",
+    href: PROGRAMME_REGISTER_FORM_URL,
     img: park,
   },
   {
@@ -62,7 +69,9 @@ function WhatWeDo() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
           <h1 className="font-display text-6xl lg:text-9xl uppercase mt-4 leading-[0.9]">
-            Four programs.<br /><span className="text-coral">One mission.</span>
+            Four programs.
+            <br />
+            <span className="text-coral">One mission.</span>
           </h1>
         </div>
       </section>
@@ -70,20 +79,36 @@ function WhatWeDo() {
       <section className="py-20 space-y-24">
         {programs.map((p, i) => (
           <div key={p.title} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 ? "lg:[direction:rtl]" : ""}`}>
+            <div
+              className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 ? "lg:[direction:rtl]" : ""}`}
+            >
               <div className="lg:[direction:ltr]">
-                <img src={p.img} alt={p.title} className="rounded-3xl w-full aspect-[4/3] object-cover" />
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="rounded-3xl w-full aspect-[4/3] object-cover"
+                />
               </div>
               <div className="lg:[direction:ltr]">
                 <span className="text-xs uppercase tracking-[0.3em] text-coral">{p.eyebrow}</span>
-                <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3 text-balance">{p.title}</h2>
+                <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3 text-balance">
+                  {p.title}
+                </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">{p.body}</p>
                 {p.href.startsWith("/") ? (
-                  <Link to={p.href} className="inline-flex items-center gap-2 mt-8 bg-coral text-primary-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition">
+                  <Link
+                    to={p.href}
+                    className="inline-flex items-center gap-2 mt-8 bg-coral text-primary-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition"
+                  >
                     {p.cta} <ArrowRight size={18} />
                   </Link>
                 ) : (
-                  <a href={p.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 bg-coral text-primary-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition">
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 mt-8 bg-coral text-primary-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition"
+                  >
                     {p.cta} <ArrowRight size={18} />
                   </a>
                 )}

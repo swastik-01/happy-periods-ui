@@ -1,142 +1,266 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/Layout";
-import { PageHero } from "@/components/site/PageHero";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import sarika from "@/assets/team/sarika.jpg";
 import rajni from "@/assets/team/rajni.jpg";
 import ragini from "@/assets/team/ragini.png";
-import swapnil from "@/assets/team/swapnil.png";
+import swapnil from "@/assets/team/swapnil-new.jpeg";
 import mukesh from "@/assets/team/mukesh.png";
-import ankita from "@/assets/team/ankita.jpg";
+import anisha from "@/assets/team/anisha-nair.jpeg";
 import aboutHero from "@/assets/about-hero.jpg";
-import whoWeAre from "@/assets/about-who-we-are.jpg";
+import storyWorkshop from "@/assets/about-story-workshop.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Safe n' Happy Periods" },
-      { name: "description", content: "Our story, mission, and the humans behind the movement making periods shame-free and joyful." },
-      { property: "og:title", content: "About Us — Safe n' Happy Periods" },
-      { property: "og:description", content: "Founded in 2016, we are on a mission to create effortless period conversations." },
+      { title: "About Us - Safe n' Happy Periods" },
+      {
+        name: "description",
+        content:
+          "Meet Safe n' Happy Periods, the nonprofit making menstrual health conversations open, inclusive, and empowering.",
+      },
+      { property: "og:title", content: "About Us - Safe n' Happy Periods" },
+      {
+        property: "og:description",
+        content:
+          "Founded in 2016, Safe n' Happy Periods works to eliminate period poverty and stigma through education, access, and inclusive conversations.",
+      },
       { property: "og:image", content: aboutHero },
     ],
   }),
   component: About,
 });
 
+type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  image?: string;
+  initials?: string;
+};
+
 const team = [
   {
     name: "Sarika Gupta",
-    role: "Founder Trustee — Amodini Foundation, Founder — Safe N' Happy Periods",
-    image: sarika
+    role: "Founder - Safe N Happy Periods",
+    bio: "Impact-driven education leader with 24+ years of experience designing, implementing, and scaling programs that improve learning outcomes across schools, government bodies, and NGOs to drive inclusive educational impact.",
+    image: sarika,
   },
   {
     name: "Rajni Gupta",
-    role: "Trustee — Amodini Foundation, Primary Education Specialist",
-    image: rajni
-  },
-  {
-    name: "Ragini Gupta",
-    role: "Co-founder — Safe N' Happy Periods, Development and PR Manager (USA)",
-    image: ragini
+    role: "Cofounder - Safe N Happy Periods",
+    bio: "With over a decade of experience as a primary education specialist, Rajni is passionate about nurturing young minds and creating inclusive, joyful learning spaces.",
+    image: rajni,
   },
   {
     name: "Dr. Swapnil Gupta",
-    role: "Trustee — Amodini Foundation, Medical Dr (Dallas), Community Health",
-    image: swapnil
+    role: "Trustee - Amodini Foundation",
+    bio: "A medicine doctor based in Dallas, USA, Dr. Swapnil brings a healthcare-driven perspective and a deep commitment to community health and women's well-being.",
+    image: swapnil,
   },
   {
-    name: "Mukesh Amra",
-    role: "Design Element — Mission: Removing barriers and connecting individuals",
-    image: mukesh
+    name: "Mukesh Amra Vaghela",
+    role: "Design Specialist",
+    bio: "Leads creative and visual communication across websites, brochures, branding, and campaign creatives to make menstrual health awareness more engaging and accessible.",
+    image: mukesh,
   },
   {
-    name: "Ankita Tekwani",
-    role: "Brand & Strategic Initiatives — Marketing Enthusiast",
-    image: ankita
+    name: "Ragini Gupta",
+    role: "Yoga and Wellness Support",
+    bio: "A Seattle-based yoga practitioner who works with Renewal Food Bank and supports the wellness and yoga component of menstrual health initiatives.",
+    image: ragini,
   },
-];
+  {
+    name: "Anisha Nair",
+    role: "Social Media and Content Marketing Manager",
+    bio: "Leads digital storytelling, awareness campaigns, and community engagement to amplify conversations around menstrual health, period equity, and youth awareness.",
+    image: anisha,
+  },
+] satisfies TeamMember[];
 
 const milestones = [
-  { year: "2016", text: "Safe N' Happy Periods (SNHP) founded by Sarika with a goal to end period shame; first major project with NMMC." },
-  { year: "2018", text: "Gained major recognition with support from Shabana Azmi Ji at the Menstrual Conclave." },
-  { year: "2020", text: "Global expansion through international volunteer programs (15+ countries) and digital outreach." },
-  { year: "2022", text: "Partnered with Pepsi for a landmark CSR project in Ghana, taking our mission international." },
-  { year: "2024", text: "Reached over 1.5 million girls and women with specialized 'Yoga for Periods' and 'Train the Trainer' programs." },
+  {
+    year: "2016",
+    title: "Foundation Established",
+    body: "Safe N Happy Periods was founded under the Amodini Foundation with a vision to eliminate period poverty.",
+  },
+  {
+    year: "2016",
+    title: "First School Program",
+    body: "Launched our first comprehensive menstrual health education program with Navi Mumbai Municipal Corporation (NMMC) in Navi Mumbai municipal schools, reaching 5,000+ students.",
+  },
+  {
+    year: "2018",
+    title: "Recognition & Reach",
+    body: "Gained wider recognition with support from Shabana Azmi Ji at the Menstrual Conclave.",
+  },
+  {
+    year: "2021",
+    title: "Pandora's Box: Lifting the Lid on Menstruation",
+    body: "Pandora's Box: Lifting the Lid on Menstruation featured Safe N Happy Periods in its powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma.",
+  },
+  {
+    year: "2022",
+    title: "Corporate Partnerships",
+    body: "Expanded partnerships with major corporations to bring menstrual health education to workplaces across India and supported a CSR project with Pepsi in Ghana.",
+  },
+  {
+    year: "2024",
+    title: "Specialized Programs",
+    body: "Reached over 1.5 million girls and women with specialized Yoga for Periods and Train the Trainer programs.",
+  },
 ];
 
 function About() {
   return (
     <SiteLayout>
-      <PageHero
-        eyebrow="Who we are"
-        title="Real talk."
-        highlight="Zero shame."
-        image={aboutHero}
-      >
-        We are a nonprofit organization on a mission to make periods shame-free, pain-free, and joyful for all those who menstruate.
-      </PageHero>
+      <section className="bg-background py-16 lg:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7"
+          >
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">About</span>
+            <h1 className="mt-5 font-display text-5xl uppercase leading-[0.9] text-foreground sm:text-6xl lg:text-8xl">
+              Who are we?
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              At Safe n Happy Periods, we believe periods should never come with shame, silence, or
+              struggle. We are a nonprofit organization working to make menstrual health
+              conversations open, inclusive, and empowering, creating a world where periods are
+              shame-free, pain-free, and joyful for everyone who menstruates.
+            </p>
+            <p className="mt-6 font-display text-3xl uppercase text-primary sm:text-4xl">
+              Real talk. Zero shame. Real impact.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <img
+              src={aboutHero}
+              alt="Safe n Happy Periods community workshop"
+              className="aspect-[4/5] w-full rounded-[8px] border border-border object-cover shadow-lg"
+            />
+          </motion.div>
+        </div>
+      </section>
 
-      <section id="story" className="py-24">
+      <section id="story" className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <img src={whoWeAre} alt="Safe N' Happy Periods workshops" className="rounded-3xl shadow-2xl w-full aspect-square object-cover" />
+              <img
+                src={storyWorkshop}
+                alt="Safe n Happy Periods menstrual health workshop"
+                className="aspect-square w-full rounded-[8px] object-cover shadow-lg"
+              />
             </motion.div>
             <div>
-              <span className="text-xs uppercase tracking-[0.3em] text-primary">The Story</span>
-              <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3 leading-tight">From a living room to a global movement.</h2>
-              <div className="mt-8 text-muted-foreground leading-relaxed text-lg space-y-6">
+              <span className="text-xs uppercase tracking-[0.3em] text-primary">
+                How it started
+              </span>
+              <h2 className="mt-3 font-display text-5xl uppercase leading-tight lg:text-6xl">
+                From a living room to a global movement.
+              </h2>
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Safe N’ Happy Periods (SNHP) is a flagship project of the <strong>Amodini Foundation</strong>, a Mumbai-based non-profit started in 2016 by Sarika with the help of two friends. What began as an honest dialogue about the silence surrounding menstruation has grown into a movement with volunteers from over 15 countries.
+                  Safe N Happy Periods began in February 2016, when Sarika Gupta set out to
+                  challenge the silence and stigma surrounding menstruation. What started as a small
+                  initiative from a living room soon grew into a powerful movement dedicated to
+                  making menstrual health education accessible, conversations more open, and hygiene
+                  resources available to all.
                 </p>
                 <p>
-                  From first periods to menopause, we work across schools, communities, and organizations to make menstrual health accessible and stigma-free. We believe knowledge is the most powerful tool against stigma.
+                  Built on empathy, dignity, and the belief that no one should feel shame for a
+                  natural biological process, SNHP works to create a world where periods are
+                  understood, supported, and normalized. Through awareness workshops, community
+                  outreach, campaigns, and on-ground initiatives, Safe N Happy Periods empowers
+                  individuals with knowledge, confidence, and access to menstrual care.
                 </p>
+                <p>
+                  From colleges and communities to collaborative campaigns and resource distribution
+                  drives, SNHP continues to break taboos and spark conversations that create lasting
+                  social change.
+                </p>
+                <blockquote className="border-l-4 border-primary pl-5 font-semibold text-foreground">
+                  "We believe that open, shame-free conversations about menstruation are the first
+                  step toward gender equity. When we normalize periods, we empower individuals and
+                  transform communities."
+                </blockquote>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="mission" className="bg-muted py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
-          {[
-            { title: "Vision", body: "Our Vision is to make Periods shame-free, pain-free, and joyful for all those who menstruate." },
-            { title: "Mission", body: "Our Mission is to create gender neutral and effortless conversations on Periods. Real Talk Zero Shame." },
-          ].map((c) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-background p-8 rounded-3xl border border-border"
-            >
-              <h3 className="font-display text-3xl uppercase text-primary">{c.title}</h3>
-              <p className="mt-4 text-muted-foreground leading-relaxed text-lg">{c.body}</p>
-            </motion.div>
-          ))}
+      <section id="mission" className="bg-muted py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">Mission & Vision</span>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            {[
+              {
+                title: "Mission",
+                body: "To eliminate period poverty and stigma through comprehensive education, accessible menstrual products, and inclusive conversations that normalize menstruation as a natural biological process.",
+              },
+              {
+                title: "Vision",
+                body: "A world where no one is limited by their period, where menstrual health is recognized as essential to gender equality, education access, and economic opportunity for all.",
+              },
+            ].map((c) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="border-l-4 border-primary bg-background p-8"
+              >
+                <h3 className="font-display text-3xl uppercase text-primary">{c.title}</h3>
+                <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{c.body}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <Section id="amodini" eyebrow="Our Philosophy" title="Inclusive Education.">
+      <Section id="amodini" title="Amodini Foundation">
         <p>
-          We believe knowledge is the most powerful tool against stigma. Our programs are designed to be inclusive, evidence-based, and culturally sensitive. We simplify the biology, clear up the grey areas, and build a culture where respect and accountability are non-negotiable.
+          Founded in 2018 by Sarika, Amodini Foundation was born from a vision to create a society
+          where girls and women live with dignity, free from taboos and limitations. "Amodini" means
+          joyful girl or woman, and that lies at the heart of all we do.
+        </p>
+        <p>
+          What began as a passionate initiative to break menstrual health taboos has grown into a
+          multifaceted organization addressing pressing issues of menstrual health and POSH
+          awareness, critical areas that impact women's confidence, safety, and empowerment.
+        </p>
+        <p>
+          Today, we are proud to have reached thousands of individuals across schools, colleges,
+          communities, and workplaces, creating spaces for open dialogue, education, and
+          transformative change.
         </p>
       </Section>
 
-      <section id="team" className="bg-secondary text-secondary-foreground py-24">
+      <section id="team" className="bg-secondary py-16 text-secondary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Our Team</span>
-          <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3">The humans behind the work.</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+          <h2 className="mt-3 font-display text-5xl uppercase lg:text-6xl">
+            Real people. Real impact.
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m, i) => (
               <motion.div
                 key={m.name}
@@ -144,51 +268,78 @@ function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group"
+                className="rounded-[8px] border border-border bg-background p-4 text-left"
               >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-background/10 border border-border/50">
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    className="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div className="aspect-square overflow-hidden rounded-[8px] bg-muted">
+                  {m.image ? (
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-primary/15 font-display text-6xl text-primary">
+                      {m.initials}
+                    </div>
+                  )}
                 </div>
-                <h3 className="font-display text-2xl uppercase text-primary mt-6">{m.name}</h3>
-                <p className="text-secondary-foreground/80 mt-2 text-sm leading-relaxed">{m.role}</p>
+                <h3 className="mt-5 font-display text-3xl uppercase text-primary">{m.name}</h3>
+                <p className="mt-1 text-sm font-semibold text-foreground">{m.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="milestones" className="py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <section id="milestones" className="py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Milestones</span>
-          <h2 className="font-display text-4xl lg:text-5xl uppercase mt-3">A decade in motion.</h2>
-          <div className="mt-10 space-y-6 border-l-2 border-primary/30 pl-8">
-            {milestones.map((m, i) => (
-              <motion.div
-                key={m.year}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="relative"
-              >
-                <span className="absolute -left-[2.55rem] top-1.5 w-4 h-4 rounded-full bg-primary" />
-                <div className="font-display text-3xl text-primary">{m.year}</div>
-                <p className="text-foreground mt-1">{m.text}</p>
-              </motion.div>
-            ))}
+          <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+            From small beginnings to bigger change.
+          </h2>
+          <div className="relative mt-12">
+            <div className="absolute bottom-6 left-2 top-2 w-px bg-primary/30 lg:left-1/2 lg:-translate-x-1/2" />
+            <div className="space-y-8 lg:space-y-0">
+              {milestones.map((m, i) => (
+                <motion.div
+                  key={m.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className={`relative grid gap-4 pl-9 lg:grid-cols-2 lg:gap-10 lg:pl-0 ${
+                    i % 2 === 0 ? "" : "lg:[&>div]:col-start-2"
+                  }`}
+                >
+                  <div className="relative rounded-[8px] border border-border bg-background p-7 shadow-sm">
+                    <span
+                      className={`absolute top-7 h-4 w-4 rounded-full border-4 border-background bg-primary lg:top-1/2 lg:-translate-y-1/2 ${
+                        i % 2 === 0
+                          ? "-left-[2.1rem] lg:-right-[2.45rem] lg:left-auto"
+                          : "-left-[2.1rem] lg:-left-[2.55rem]"
+                      }`}
+                    />
+                    <p className="font-display text-3xl text-primary">{m.year}</p>
+                    <h3 className="mt-3 font-display text-3xl uppercase text-foreground">
+                      {m.title}
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{m.body}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="bg-primary py-14 text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <h2 className="font-display text-5xl uppercase">Be part of the next decade.</h2>
-          <Link to="/get-involved" className="mt-8 inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 rounded-full font-semibold hover:scale-105 transition">
+          <Link
+            to="/get-involved"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 font-semibold text-foreground transition hover:scale-105"
+          >
             Get involved <ArrowRight size={18} />
           </Link>
         </div>
@@ -197,13 +348,29 @@ function About() {
   );
 }
 
-function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string; title: string; children: React.ReactNode }) {
+function Section({
+  id,
+  eyebrow,
+  title,
+  children,
+}: {
+  id: string;
+  eyebrow?: string;
+  title: string;
+  children: ReactNode;
+}) {
   return (
-    <section id={id} className="py-20">
+    <section id={id} className="py-14">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <span className="text-xs uppercase tracking-[0.3em] text-primary">{eyebrow}</span>
-        <h2 className="font-display text-4xl lg:text-5xl uppercase mt-3">{title}</h2>
-        <div className="mt-6 text-muted-foreground leading-relaxed text-lg">{children}</div>
+        {eyebrow && (
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">{eyebrow}</span>
+        )}
+        <h2 className={`font-display text-4xl uppercase lg:text-5xl ${eyebrow ? "mt-3" : ""}`}>
+          {title}
+        </h2>
+        <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+          {children}
+        </div>
       </div>
     </section>
   );

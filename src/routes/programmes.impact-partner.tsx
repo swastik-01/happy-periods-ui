@@ -1,42 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProgrammePage } from "@/components/site/ProgrammePage";
-import padDonation from "@/assets/home/pad-donation.jpg";
+import padDonation from "@/assets/donate.jpg";
 import field from "@/assets/home/field.jpg";
 import outreach from "@/assets/home/outreach.jpg";
 
 export const Route = createFileRoute("/programmes/impact-partner")({
-  head: () => ({ meta: [{ title: "Impact Partner — Safe n' Happy Periods" }, { name: "description", content: "Long-term partnerships for sustained menstrual health change." }] }),
+  head: () => ({
+    meta: [
+      { title: "Corporate Partnerships - Safe n' Happy Periods" },
+      {
+        name: "description",
+        content:
+          "Long-term partnerships, sponsorships, and community engagement for menstrual health.",
+      },
+    ],
+  }),
   component: () => (
-    <ProgrammePage data={{
-      slug: "impact-partner",
-      eyebrow: "Programme · Impact Partner",
-      title: "Long-term",
-      highlight: "partnerships.",
-      intro: "One workshop changes a day. A multi-year partnership changes a community. Become an Impact Partner and walk this distance with us.",
-      hero: padDonation,
-      whatWeDo: {
-        heading: "Embed sustainable menstrual health into a community.",
-        body: "Impact Partners commit to multi-year engagements — funding, infrastructure, or co-design — enabling deep, measurable change.",
-        bullets: [
-          "Co-designed 3+ year community programme.",
-          "Quarterly impact reports with verified data.",
-          "On-ground volunteer + staff embedment.",
-          "Joint storytelling, branding and PR rights.",
-          "End-of-cycle independent impact audit.",
-        ],
-      },
-      impact: {
-        stats: [
-          { num: "12", label: "Active partners" },
-          { num: "5yr", label: "Avg. partnership" },
-          { num: "8", label: "Communities served" },
-          { num: "100%", label: "Reported retention" },
-        ],
-        images: [
-          field,
-          outreach,
-        ],
-      },
-    }} />
+    <ProgrammePage
+      data={{
+        slug: "impact-partner",
+        eyebrow: "Programme",
+        title: "Corporate Partnerships.",
+        intro:
+          "Partnerships that sustain menstrual health education, pad donation drives, and grassroots outreach.",
+        hero: padDonation,
+        whatWeDo: {
+          heading: "Partner with us for long-term impact.",
+          paragraphs: [
+            "At Safe N Happy Periods (SNHP), our Impact Partners are the individuals, organizations, and collaborators who support our mission through long-term partnerships, sponsorships, and consistent community engagement.",
+            "Whether through small recurring contributions, collaborative initiatives, or continued advocacy, their support helps us sustain menstrual health education, awareness programs, pad donation drives, and grassroots outreach efforts.",
+            "Impact Partners play an important role in helping SNHP expand its reach and create lasting change by enabling us to continue working with schools, communities, workplaces, and underserved groups over the years. Together, we are building a stronger, more informed, and stigma-free future around menstrual health.",
+          ],
+        },
+        impact: {
+          heading: "Mijwan and long-term partner impact.",
+          sections: [
+            {
+              title: "Mijwan",
+              paragraphs: [
+                "One of our key long-term Impact Partners has been Mijwan Welfare Society, with whom SNHP has collaborated for over 7 years.",
+                "Together, we have conducted menstrual health awareness programs across schools and sewing centers, reaching young girls and women through education, hygiene awareness, and community-based engagement initiatives.",
+                "Through the continued support of our Impact Partners, SNHP is able to expand its reach and create lasting grassroots impact while working towards a more informed, empowered, and stigma-free future around menstrual health.",
+              ],
+            },
+          ],
+          images: [field, outreach],
+        },
+      }}
+    />
   ),
 });

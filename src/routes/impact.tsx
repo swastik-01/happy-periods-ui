@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import wall from "@/assets/home/wall.jpg";
-import workshop from "@/assets/home/workshop.jpg";
+import workshop from "@/assets/home/outreach.jpg";
 import impact1 from "@/assets/impact/impact1.jpg";
 import impact2 from "@/assets/impact/impact2.jpg";
 import impact3 from "@/assets/impact/impact3.jpg";
@@ -11,7 +11,7 @@ import hindu from "@/assets/news/hindu.jpg";
 import radiocity from "@/assets/news/radiocity.jpg";
 import ymca from "@/assets/partners/ymca.png";
 import pps from "@/assets/partners/pps.png";
-import nmmc from "@/assets/partners/nmmc.png";
+import nmmc from "@/assets/partners/Navi Mumbai Municipal Corporation.jpg";
 import wipro from "@/assets/partners/wipro.png";
 import podar from "@/assets/partners/podar.png";
 import pepsico from "@/assets/partners/pepsico.png";

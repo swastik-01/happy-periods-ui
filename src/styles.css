@@ -177,7 +177,7 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     line-height: 0.95;
   }
 }
@@ -185,7 +185,7 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
   .text-balance { text-wrap: balance; }
   .bg-plum { background-color: var(--plum); }

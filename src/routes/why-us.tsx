@@ -1,28 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
-import { Quote } from "lucide-react";
 
 export const Route = createFileRoute("/why-us")({
-  head: () => ({ meta: [{ title: "Why Us — Safe n' Happy Periods" }, { name: "description", content: "Our partners, appraises and testimonies — why people choose Safe n' Happy Periods." }] }),
+  head: () => ({
+    meta: [
+      { title: "Why Us - Safe n' Happy Periods" },
+      { name: "description", content: "Our partners, appraises and volunteers - why people choose Safe n' Happy Periods." },
+    ],
+  }),
   component: WhyUs,
 });
 
-const partners = [
-  "Amodini Foundation", "P&G Whisper", "UNICEF India", "Tata Trusts", "Mumbai Municipal", "Femme Inc.",
-  "PadCare Labs", "MIJWAN", "Niine Movement", "WaterAid India", "BMC", "Save The Children",
+const partnerModules = import.meta.glob<{ default: string }>("/src/assets/partners/*.{png,jpg,jpeg}", { eager: true });
+const partners = Object.entries(partnerModules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, module]) => ({
+    src: module.default,
+    name: path
+      .split("/")
+      .pop()!
+      .replace(/\.(png|jpe?g)$/i, "")
+      .replace(/[_-]/g, " "),
+  }));
+const movingPartners = [...partners, ...partners];
+
+const partnerCopy = [
+  "At Safe n Happy Periods, we believe meaningful change happens through collaboration. Our partners include schools, colleges, student committees, NGOs, healthcare advocates and community organizations who share our vision of making menstrual health conversations more open, accessible and stigma-free.",
+  "Together, we work to conduct impactful workshops, awareness drives, donation initiatives and outreach programs that help us reach more individuals and communities with education, support and dignity.",
 ];
 
 const appraises = [
-  { src: "Forbes India", text: "\"A grassroots movement turning silence into structural change.\"" },
-  { src: "The Hindu", text: "\"Among the most effective community-led menstrual education programmes in India.\"" },
-  { src: "Mid-Day", text: "\"Honest, warm, and uncompromising — exactly what menstrual education needs.\"" },
+  "Appreciated by students, educators and communities for making menstrual health education accessible, inclusive and stigma-free through engaging on-ground initiatives.",
+  "The impact of Safe n Happy Periods is reflected in the voices of the students, schools and communities we work with. Through open conversations, awareness sessions and menstrual health initiatives, we are helping create safer, more informed and stigma-free spaces for everyone.",
 ];
 
-const testimony = [
-  { name: "Priya, Class 9 student", text: "I always felt scared to ask. After the SNHP workshop, I asked everything — and now I'm helping my younger sister." },
-  { name: "Ravi, HR Lead at a Mumbai firm", text: "Our period policy moved from a paragraph to a real practice because of SNHP." },
-  { name: "Sunita, Anganwadi worker", text: "The training gave me confidence to lead these talks in 14 villages around mine." },
+const volunteers = [
+  "Safe N Happy Periods has always been a volunteer-driven non-profit built on the passion, dedication, and collective efforts of people who believe in menstrual health equity and dignity for all. From conducting awareness sessions and community outreach to supporting campaigns, content, logistics, and creative initiatives, volunteers remain at the heart of everything we do.",
+  "Over the years, SNHP has welcomed both Indian and international volunteers, creating a diverse and inclusive community united by a shared mission to break stigma and build awareness around menstrual health. Many of our volunteers have joined us through platforms like ConnectFor and AIESEC, contributing their skills, time, and ideas to create meaningful impact across communities.",
+  "Their support has helped us expand conversations around periods, reach underserved groups, and build safe spaces for education, empathy, and change.",
 ];
 
 function WhyUs() {
@@ -32,46 +48,84 @@ function WhyUs() {
         A decade in. Hundreds of partners. Tens of thousands of voices. Here's what carries the work forward.
       </PageHero>
 
-      <section id="partners" className="py-20">
+      <section id="partners" className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Partners</span>
-          <h2 className="font-display text-4xl uppercase mt-3">In good company.</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mt-10">
-            {partners.map((p) => (
-              <div key={p} className="bg-cream border border-border rounded-2xl py-6 text-center font-display text-lg uppercase tracking-wide hover:border-coral hover:text-coral transition">
-                {p}
-              </div>
+          <h2 className="mt-3 font-display text-4xl uppercase">In good company.</h2>
+          <div className="mt-6 max-w-4xl space-y-4 text-base leading-8 text-muted-foreground">
+            {partnerCopy.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          <div className="mt-10 overflow-hidden">
+            <div className="flex w-max animate-[partner-marquee_56s_linear_infinite] items-center gap-12">
+              {movingPartners.map((partner, index) => (
+                <div key={`${partner.src}-${index}`} className="flex h-28 w-44 shrink-0 items-center justify-center">
+                  <img src={partner.src} alt={`${partner.name} logo`} className="max-h-20 w-full object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 overflow-hidden" aria-hidden="true">
+            <div className="flex w-max animate-[partner-marquee-reverse_64s_linear_infinite] items-center gap-12">
+              {movingPartners
+                .slice()
+                .reverse()
+                .map((partner, index) => (
+                  <div key={`${partner.src}-reverse-${index}`} className="flex h-28 w-44 shrink-0 items-center justify-center">
+                    <img src={partner.src} alt="" className="max-h-20 w-full object-contain" />
+                  </div>
+                ))}
+            </div>
+          </div>
+          <style>{`
+            @keyframes partner-marquee {
+              from {
+                transform: translateX(0);
+              }
+              to {
+                transform: translateX(-50%);
+              }
+            }
+
+            @keyframes partner-marquee-reverse {
+              from {
+                transform: translateX(-50%);
+              }
+              to {
+                transform: translateX(0);
+              }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .animate-\\[partner-marquee_56s_linear_infinite\\],
+              .animate-\\[partner-marquee-reverse_64s_linear_infinite\\] {
+                animation: none;
+              }
+            }
+          `}</style>
         </div>
       </section>
 
-      <section id="appraises" className="bg-plum text-cream py-20">
+      <section id="appraises" className="bg-plum py-20 text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Appraises</span>
-          <h2 className="font-display text-4xl uppercase mt-3">In the press.</h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {appraises.map((a) => (
-              <div key={a.src} className="bg-cream/5 border border-cream/10 rounded-3xl p-7">
-                <Quote className="text-coral" size={28} />
-                <p className="mt-4 text-cream/90 leading-relaxed">{a.text}</p>
-                <p className="mt-5 text-xs uppercase tracking-[0.2em] text-coral">{a.src}</p>
-              </div>
+          <h2 className="mt-3 font-display text-4xl uppercase">Recognized by communities.</h2>
+          <div className="mt-8 max-w-4xl space-y-5 text-lg leading-9 text-cream/90">
+            {appraises.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="testimony" className="py-20 bg-cream">
+      <section id="volunteers" className="bg-cream py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.3em] text-coral">Testimony</span>
-          <h2 className="font-display text-4xl uppercase mt-3">Voices from the ground.</h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {testimony.map((t) => (
-              <div key={t.name} className="bg-background border border-border rounded-3xl p-7">
-                <p className="text-foreground italic leading-relaxed">"{t.text}"</p>
-                <p className="mt-5 text-sm font-semibold text-coral">— {t.name}</p>
-              </div>
+          <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Volunteers</span>
+          <h2 className="mt-3 font-display text-4xl uppercase">Driven by people.</h2>
+          <div className="mt-8 max-w-4xl space-y-5 text-base leading-8 text-muted-foreground">
+            {volunteers.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
