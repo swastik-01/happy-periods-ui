@@ -8,7 +8,7 @@ const LOGO = logo;
 export function Footer() {
   return (
     <footer className="mt-0 bg-secondary text-secondary-foreground dark:bg-plum-deep dark:text-cream/90">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-12 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:px-6 md:grid-cols-12 lg:px-8">
         <div className="md:col-span-4">
           <Link to="/" className="inline-flex">
             <img

@@ -13,7 +13,7 @@ export function HeroCarousel({ images, interval = 5500 }: { images: { src: strin
 
   return (
     <div
-      className="relative aspect-[4/5] sm:aspect-[5/4] rounded-3xl overflow-hidden border-4 border-primary/30 bg-muted"
+      className="relative aspect-[4/5] overflow-hidden rounded-[8px] border-4 border-primary/30 bg-muted sm:aspect-[5/4]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -22,7 +22,7 @@ export function HeroCarousel({ images, interval = 5500 }: { images: { src: strin
           key={idx}
           src={images[idx].src}
           alt={images[idx].alt}
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ opacity: { duration: 1.2 } }}

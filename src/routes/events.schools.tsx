@@ -27,7 +27,7 @@ function SchoolsEvent() {
         Creating safe, informed, and stigma-free spaces in educational institutions to normalize menstrual health conversations.
       </PageHero>
 
-      <section className="py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link 
             to="/events" 

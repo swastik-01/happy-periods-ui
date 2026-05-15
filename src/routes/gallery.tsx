@@ -88,9 +88,9 @@ function Gallery() {
         A decade of conversations, classrooms and community — captured in pictures, videos and the words of those we've worked with.
       </PageHero>
 
-      <section id="pics" className="py-20 bg-background">
+      <section id="pics" className="py-12 md:py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-coral mb-3 block">Visual Story</span>
               <h2 className="font-display text-4xl lg:text-5xl uppercase">Pictures</h2>
@@ -145,17 +145,17 @@ function Gallery() {
         </div>
       </section>
 
-      <section id="video" className="bg-plum text-cream py-24 relative overflow-hidden">
+      <section id="video" className="bg-plum text-cream py-12 md:py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-coral/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
         
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="text-xs uppercase tracking-[0.3em] text-coral/80 mb-4 block font-bold">Documentaries</span>
             <h2 className="font-display text-5xl uppercase mb-6">Stories in Motion</h2>
             <p className="text-cream/70 text-lg">Voices from the ground, glimpses into our workshops, and the real-world impact of menstrual health awareness.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               { title: "Pandora's Box Feature", desc: "Our feature in the global documentary on period poverty." },
               { title: "Rural Outreach", desc: "A day in the life of our trainers in Mulshi village." },
@@ -183,9 +183,9 @@ function Gallery() {
         </div>
       </section>
 
-      <section id="testimonies" className="py-24 bg-cream">
+      <section id="testimonies" className="py-12 md:py-16 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div className="max-w-2xl">
               <span className="text-xs uppercase tracking-[0.3em] text-coral mb-4 block font-bold">Public Record</span>
               <h2 className="font-display text-5xl uppercase text-foreground leading-[0.9]">In the <span className="text-coral">Press.</span></h2>
@@ -193,7 +193,7 @@ function Gallery() {
             <p className="text-muted-foreground text-sm max-w-sm mb-2">Our mission has been documented by leading publications, recognizing the impact of our grassroots efforts.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {[
               { src: "Mid-Day Feature", text: "How a Mumbai grassroots collective is rewriting period education." },
               { src: "The Better India", text: "Meet the team turning awkward classroom moments into confident conversations." },

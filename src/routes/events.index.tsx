@@ -20,9 +20,9 @@ export const Route = createFileRoute("/events/")({
 
 function EventSection({ title, children, image, reverse = false, to }: { title: string; children: React.ReactNode; image: string; reverse?: boolean; to: string }) {
   return (
-    <section className="py-16 md:py-24 border-b border-border/50 last:border-0">
+    <section className="py-12 md:py-16 border-b border-border/50 last:border-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={`grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+        <div className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
           <div className={reverse ? 'lg:order-2' : ''}>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}

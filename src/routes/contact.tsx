@@ -38,7 +38,7 @@ function Contact() {
 
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-20 lg:py-28">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Let's connect</span>
           <h1 className="font-display text-6xl lg:text-8xl uppercase mt-4 leading-[0.9]">
@@ -48,8 +48,8 @@ function Contact() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+      <section className="py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="font-display text-3xl uppercase">Reach us directly</h2>
             <ul className="mt-8 space-y-5">

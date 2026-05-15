@@ -78,8 +78,8 @@ function Programmes() {
         menstrual health support reaches those who need it most.
       </PageHero>
 
-      <section className="py-20">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+      <section className="py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
           {items.map((programme, index) => (
             <motion.div
               key={programme.to}

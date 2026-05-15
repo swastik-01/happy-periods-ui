@@ -26,7 +26,7 @@ function GetInvolved() {
         Money, time, voice or skills - pick the one that fits and join the movement.
       </PageHero>
 
-      <nav className="sticky top-20 z-30 border-b border-white/10 bg-plum-deep text-cream">
+      <nav className="sticky top-24 z-30 border-b border-white/10 bg-plum-deep text-cream sm:top-28">
         <div className="mx-auto flex max-w-7xl flex-wrap gap-6 px-4 py-4 text-xs uppercase tracking-wider sm:px-6 lg:px-8">
           <Link to="/donate" className="hover:text-coral">
             Donate
@@ -40,7 +40,7 @@ function GetInvolved() {
         </div>
       </nav>
 
-      <section id="donate" className="py-20">
+      <section id="donate" className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <Heart className="text-coral" size={28} />
@@ -49,7 +49,7 @@ function GetInvolved() {
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Choose what your contribution funds. Every rupee supports menstrual health education, access, and outreach.
           </p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Pad Drive", desc: "Sanitary product distribution drives." },
               { title: "Seminar", desc: "Support a school or community seminar." },
@@ -71,7 +71,7 @@ function GetInvolved() {
         </div>
       </section>
 
-      <section id="volunteer" className="bg-cream py-20">
+      <section id="volunteer" className="bg-cream py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <UserPlus className="text-coral" size={28} />
@@ -91,7 +91,7 @@ function GetInvolved() {
         </div>
       </section>
 
-      <section id="register" className="bg-plum py-20 text-cream">
+      <section id="register" className="bg-plum py-12 md:py-16 text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <ClipboardList className="text-coral" size={28} />

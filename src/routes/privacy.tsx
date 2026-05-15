@@ -14,7 +14,7 @@ export const Route = createFileRoute("/privacy")({
 function Privacy() {
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-20 lg:py-28">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Legal</span>
           <h1 className="font-display text-5xl lg:text-7xl uppercase mt-3 leading-[0.9]">Privacy Policy</h1>
@@ -22,7 +22,7 @@ function Privacy() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 md:py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-8 text-muted-foreground leading-relaxed">
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">1. Who we are</h2>

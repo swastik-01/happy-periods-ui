@@ -45,13 +45,13 @@ function Resources() {
       </PageHero>
 
       {sections.map((s, i) => (
-        <section key={s.id} id={s.id} className={i % 2 === 0 ? "py-20" : "py-20 bg-cream"}>
+        <section key={s.id} id={s.id} className={i % 2 === 0 ? "py-12 md:py-16" : "py-12 md:py-16 bg-cream"}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-4">
               <s.icon className="text-coral" size={28} />
               <h2 className="font-display text-4xl uppercase">{s.label}</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {s.items.map((it) => (
                 <div key={it.title} className="bg-background border border-border rounded-3xl p-7 hover:border-coral transition group">
                   <h3 className="font-display text-xl uppercase">{it.title}</h3>

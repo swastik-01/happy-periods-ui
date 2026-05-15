@@ -38,21 +38,16 @@ const monthlyImpact = [
 function Donate() {
   return (
     <SiteLayout>
-      <section className="relative overflow-hidden bg-plum-deep py-20 text-cream lg:py-28">
+      <section className="relative overflow-hidden bg-plum-deep py-12 text-cream md:py-16 lg:py-20">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-coral/20 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-6"
-          >
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <motion.div className="min-w-0 lg:col-span-6">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Donate</span>
-            <h1 className="mt-4 font-display text-5xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 font-display text-4xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
               Support dignity.
               <span className="block text-coral">Support access.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-cream/82">
+            <p className="mt-7 max-w-[20rem] text-lg leading-8 text-cream/82 sm:max-w-2xl">
               Providing menstrual products and education to orphanages, shelter homes, and underserved communities.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -73,12 +68,7 @@ function Donate() {
               <Award size={14} className="text-coral" /> 80G tax exempt for eligible donations
             </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-6"
-          >
+          <motion.div className="min-w-0 lg:col-span-6">
             <img
               src={donate}
               alt="Pad donation drive"
@@ -88,14 +78,14 @@ function Donate() {
         </div>
       </section>
 
-      <section id="donate-options" className="py-20">
+      <section id="donate-options" className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Choose your support</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Every donation moves the work forward.</h2>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
             <DonationCard
               icon={Gift}
               title="One-Time Donation"
@@ -114,8 +104,8 @@ function Donate() {
         </div>
       </section>
 
-      <section id="bank-details" className="bg-cream py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="bank-details" className="bg-cream py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Bank transfer</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Donate directly</h2>
@@ -171,8 +161,8 @@ function Donate() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+      <section className="py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <div className="rounded-[8px] bg-plum p-8 text-cream lg:p-10">
             <Heart className="text-coral" size={30} />
             <h3 className="mt-5 font-display text-3xl uppercase">Want to donate pads?</h3>

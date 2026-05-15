@@ -46,13 +46,8 @@ function Home() {
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-coral/20 blur-3xl" />
         <div className="absolute -left-32 bottom-0 w-[400px] h-[400px] rounded-full bg-pink/20 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-14 lg:pt-12 lg:pb-20 grid lg:grid-cols-12 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-5"
-          >
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 pt-6 pb-10 sm:px-6 lg:grid-cols-12 lg:px-8 lg:pt-8 lg:pb-14">
+          <motion.div className="min-w-0 lg:col-span-5">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-coral mb-6">
               <Sparkles size={14} /> Since 2014
             </span>
@@ -61,7 +56,7 @@ function Home() {
               <span className="text-coral">Pain-Free.</span><br />
               Periods.
             </h1>
-            <p className="mt-6 text-base text-muted-foreground max-w-lg leading-relaxed">
+            <p className="mt-6 max-w-[20rem] text-base leading-relaxed text-muted-foreground sm:max-w-lg">
               Building a world where periods are free from pain, shame, and silence through action, awareness, and inclusive gender-neutral conversations.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -80,12 +75,7 @@ function Home() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-7 relative"
-          >
+          <motion.div className="relative min-w-0 lg:col-span-7">
             <HeroCarousel
               images={[
                 { src: workshop, alt: "Workshop participants" },
@@ -95,7 +85,7 @@ function Home() {
                 { src: wall, alt: "Community outreach" },
               ]}
             />
-            <div className="absolute -bottom-6 -left-6 bg-coral text-primary-foreground px-6 py-4 rounded-2xl shadow-xl">
+            <div className="absolute bottom-4 left-4 bg-coral text-primary-foreground px-5 py-3 rounded-[8px] shadow-xl sm:-bottom-6 sm:-left-6 sm:px-6 sm:py-4">
               <div className="font-display text-3xl">71%</div>
               <div className="text-xs uppercase tracking-wide">Girls learn at first period</div>
             </div>
@@ -116,16 +106,16 @@ function Home() {
       </section>
 
       {/* MISSION */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
+      <section className="py-12 md:py-14">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="min-w-0 lg:col-span-5">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Mission</span>
             <h2 className="font-display text-5xl lg:text-6xl uppercase mt-4 text-balance">
               Breaking <span className="text-coral">Stigma.</span><br />
               Building <span className="text-coral">Understanding.</span>
             </h2>
           </div>
-          <div className="lg:col-span-7 lg:pt-6">
+          <div className="min-w-0 lg:col-span-7 lg:pt-6">
             <p className="text-2xl leading-snug text-balance">
               Why is something so natural still surrounded by silence?
             </p>
@@ -143,9 +133,9 @@ function Home() {
       </section>
 
       {/* PROGRAMS */}
-      <section className="bg-secondary text-secondary-foreground py-16">
+      <section className="bg-secondary text-secondary-foreground py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-8">
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
               <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3">
@@ -158,7 +148,7 @@ function Home() {
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {programs.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -182,9 +172,9 @@ function Home() {
       </section>
 
       {/* VIDEO */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-4">
+      <section className="py-12 md:py-14 bg-background">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="min-w-0 lg:col-span-4">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-coral">
               <Youtube size={16} /> Watch
             </span>
@@ -195,7 +185,7 @@ function Home() {
               In 2021, Safe N Happy Periods was featured in Pandora's Box: Lifting the Lid on Menstruation, a powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma. The documentary shed light on the urgent need for awareness, accessibility, and open conversations around menstruation, while showcasing SNHP's efforts toward creating a more informed and stigma-free society.
             </p>
           </div>
-          <div className="lg:col-span-8">
+          <div className="min-w-0 lg:col-span-8">
             <div className="aspect-video overflow-hidden rounded-3xl border border-border bg-muted shadow-xl shadow-coral/10">
               <iframe
                 className="h-full w-full"
@@ -210,7 +200,7 @@ function Home() {
       </section>
 
       {/* MANIFESTO QUOTE */}
-      <section className="py-16 bg-muted text-foreground">
+      <section className="py-12 md:py-14 bg-muted text-foreground">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
           <Users className="text-coral mx-auto" size={40} />
           <p className="font-display text-4xl sm:text-5xl lg:text-6xl uppercase leading-tight mt-6 text-balance">
@@ -220,8 +210,8 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary text-primary-foreground py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <section className="bg-primary text-primary-foreground py-12">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <h2 className="font-display text-5xl lg:text-7xl uppercase">
             Support our mission.<br />
             <span className="opacity-80">Safer periods.</span>

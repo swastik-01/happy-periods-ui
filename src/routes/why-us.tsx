@@ -48,32 +48,32 @@ function WhyUs() {
         A decade in. Hundreds of partners. Tens of thousands of voices. Here's what carries the work forward.
       </PageHero>
 
-      <section id="partners" className="py-16">
+      <section id="partners" className="py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Partners</span>
           <h2 className="mt-3 font-display text-4xl uppercase">In good company.</h2>
-          <div className="mt-6 max-w-4xl space-y-4 text-base leading-8 text-muted-foreground">
+          <div className="mt-6 max-w-[20rem] space-y-4 text-base leading-8 text-muted-foreground sm:max-w-4xl">
             {partnerCopy.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-10 overflow-hidden">
-            <div className="flex w-max animate-[partner-marquee_56s_linear_infinite] items-center gap-12">
+          <div className="mt-8 overflow-hidden">
+            <div className="flex w-max animate-[partner-marquee_56s_linear_infinite] items-center gap-8 sm:gap-12">
               {movingPartners.map((partner, index) => (
-                <div key={`${partner.src}-${index}`} className="flex h-28 w-44 shrink-0 items-center justify-center">
-                  <img src={partner.src} alt={`${partner.name} logo`} className="max-h-20 w-full object-contain" />
+                <div key={`${partner.src}-${index}`} className="flex h-20 w-36 shrink-0 items-center justify-center sm:h-28 sm:w-44">
+                  <img src={partner.src} alt={`${partner.name} logo`} className="max-h-16 w-full object-contain sm:max-h-20" />
                 </div>
               ))}
             </div>
           </div>
-          <div className="mt-8 overflow-hidden" aria-hidden="true">
-            <div className="flex w-max animate-[partner-marquee-reverse_64s_linear_infinite] items-center gap-12">
+          <div className="mt-6 overflow-hidden sm:mt-8" aria-hidden="true">
+            <div className="flex w-max animate-[partner-marquee-reverse_64s_linear_infinite] items-center gap-8 sm:gap-12">
               {movingPartners
                 .slice()
                 .reverse()
                 .map((partner, index) => (
-                  <div key={`${partner.src}-reverse-${index}`} className="flex h-28 w-44 shrink-0 items-center justify-center">
-                    <img src={partner.src} alt="" className="max-h-20 w-full object-contain" />
+                  <div key={`${partner.src}-reverse-${index}`} className="flex h-20 w-36 shrink-0 items-center justify-center sm:h-28 sm:w-44">
+                    <img src={partner.src} alt="" className="max-h-16 w-full object-contain sm:max-h-20" />
                   </div>
                 ))}
             </div>
@@ -107,7 +107,7 @@ function WhyUs() {
         </div>
       </section>
 
-      <section id="appraises" className="bg-plum py-20 text-cream">
+      <section id="appraises" className="bg-plum py-12 md:py-16 text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Appraises</span>
           <h2 className="mt-3 font-display text-4xl uppercase">Recognized by communities.</h2>
@@ -119,7 +119,7 @@ function WhyUs() {
         </div>
       </section>
 
-      <section id="volunteers" className="bg-cream py-20">
+      <section id="volunteers" className="bg-cream py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Volunteers</span>
           <h2 className="mt-3 font-display text-4xl uppercase">Driven by people.</h2>

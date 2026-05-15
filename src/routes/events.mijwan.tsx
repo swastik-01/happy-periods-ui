@@ -37,7 +37,7 @@ function MijwanEvent() {
         A transformative seven-year journey of empowering girls from underserved communities through menstruation hygiene, body literacy, and self-care.
       </PageHero>
 
-      <section className="py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link 
             to="/events" 

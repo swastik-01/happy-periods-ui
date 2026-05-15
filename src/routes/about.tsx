@@ -117,19 +117,14 @@ const milestones = [
 function About() {
   return (
     <SiteLayout>
-      <section className="bg-background py-16 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7"
-          >
+      <section className="bg-background py-12 md:py-14 lg:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <motion.div className="min-w-0 lg:col-span-7">
             <span className="text-xs uppercase tracking-[0.3em] text-primary">About</span>
             <h1 className="mt-5 font-display text-5xl uppercase leading-[0.9] text-foreground sm:text-6xl lg:text-8xl">
               Who are we?
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-[20rem] text-lg leading-relaxed text-muted-foreground sm:max-w-2xl">
               At Safe n Happy Periods, we believe periods should never come with shame, silence, or
               struggle. We are a nonprofit organization working to make menstrual health
               conversations open, inclusive, and empowering, creating a world where periods are
@@ -139,12 +134,7 @@ function About() {
               Real talk. Zero shame. Real impact.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-5"
-          >
+          <motion.div className="min-w-0 lg:col-span-5">
             <img
               src={aboutHero}
               alt="Safe n Happy Periods community workshop"
@@ -154,9 +144,9 @@ function About() {
         </div>
       </section>
 
-      <section id="story" className="py-16">
+      <section id="story" className="py-12 md:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -210,7 +200,7 @@ function About() {
       <section id="mission" className="bg-muted py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Mission & Vision</span>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
             {[
               {
                 title: "Mission",
@@ -254,13 +244,13 @@ function About() {
         </p>
       </Section>
 
-      <section id="team" className="bg-secondary py-16 text-secondary-foreground">
+      <section id="team" className="bg-secondary py-12 md:py-14 text-secondary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Our Team</span>
           <h2 className="mt-3 font-display text-5xl uppercase lg:text-6xl">
             Real people. Real impact.
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m, i) => (
               <motion.div
                 key={m.name}
@@ -308,7 +298,7 @@ function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className={`relative grid gap-4 pl-9 lg:grid-cols-2 lg:gap-10 lg:pl-0 ${
+                  className={`relative grid grid-cols-1 gap-4 pl-9 lg:grid-cols-2 lg:gap-10 lg:pl-0 ${
                     i % 2 === 0 ? "" : "lg:[&>div]:col-start-2"
                   }`}
                 >

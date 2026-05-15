@@ -46,7 +46,7 @@ export function ApplyForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid sm:grid-cols-2 gap-5 bg-card p-6 sm:p-8 rounded-3xl border border-border">
+    <form onSubmit={onSubmit} className="grid grid-cols-1 gap-5 rounded-3xl border border-border bg-card p-6 sm:grid-cols-2 sm:p-8">
       {all.map((f) => (
         <div key={f.name} className={f.rows ? "sm:col-span-2" : ""}>
           <label className="text-xs uppercase tracking-wider text-muted-foreground">{f.label}{f.required && " *"}</label>

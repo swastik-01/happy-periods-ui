@@ -31,7 +31,7 @@ const faqs = [
 function FAQ() {
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-24 lg:py-32">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">FAQ</span>
           <h1 className="font-display text-6xl lg:text-9xl uppercase mt-4 leading-[0.9]">
@@ -40,7 +40,7 @@ function FAQ() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (

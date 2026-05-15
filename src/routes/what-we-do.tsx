@@ -65,7 +65,7 @@ const programs = [
 function WhatWeDo() {
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-24 lg:py-32">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
           <h1 className="font-display text-6xl lg:text-9xl uppercase mt-4 leading-[0.9]">
@@ -76,11 +76,11 @@ function WhatWeDo() {
         </div>
       </section>
 
-      <section className="py-20 space-y-24">
+      <section className="py-12 md:py-16 space-y-12 md:space-y-16">
         {programs.map((p, i) => (
           <div key={p.title} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div
-              className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 ? "lg:[direction:rtl]" : ""}`}
+              className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 ${i % 2 ? "lg:[direction:rtl]" : ""}`}
             >
               <div className="lg:[direction:ltr]">
                 <img

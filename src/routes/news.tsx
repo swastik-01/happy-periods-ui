@@ -44,7 +44,7 @@ const posts = [
 function News() {
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-24 lg:py-32">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">News</span>
           <h1 className="font-display text-6xl lg:text-9xl uppercase mt-4 leading-[0.9]">
@@ -53,8 +53,8 @@ function News() {
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
           {posts.map((p) => (
             <a key={p.title} href={p.href} target="_blank" rel="noreferrer" className="group block">
               <div className="aspect-[4/3] overflow-hidden rounded-3xl">

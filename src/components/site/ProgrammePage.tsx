@@ -44,20 +44,20 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
         {data.intro}
       </PageHero>
 
-      <section id="what-we-do" className="py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-4">
+      <section id="what-we-do" className="py-12 md:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="min-w-0 lg:col-span-4">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
               {data.whatWeDo.heading}
             </h2>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-8">
+          <div className="min-w-0 space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-8">
             {whatWeDoParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             {data.whatWeDo.bullets && (
-              <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+              <ul className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2">
                 {data.whatWeDo.bullets.map((item, index) => (
                   <motion.li
                     key={item}
@@ -76,7 +76,7 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
         </div>
       </section>
 
-      <section id="impact" className="bg-plum py-20 text-cream">
+      <section id="impact" className="bg-plum py-12 md:py-16 text-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Impact</span>
           <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
@@ -105,7 +105,7 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
             ))}
 
             {data.impact.bullets && (
-              <ul className="grid gap-3 pt-2 sm:grid-cols-2">
+              <ul className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2">
                 {data.impact.bullets.map((item) => (
                   <li
                     key={item}
@@ -128,7 +128,7 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
                   ))}
                 </div>
                 {section.bullets && (
-                  <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {section.bullets.map((item) => (
                       <li
                         key={item}
@@ -158,7 +158,7 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
         </div>
       </section>
 
-      <section id="apply" className="bg-cream py-20">
+      <section id="apply" className="bg-cream py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Register here</span>
           <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">

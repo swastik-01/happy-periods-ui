@@ -64,7 +64,7 @@ const partners = [ymca, pps, nmmc, wipro, podar, pepsico];
 function Impact() {
   return (
     <SiteLayout>
-      <section className="bg-plum-deep text-cream py-24 lg:py-32">
+      <section className="bg-plum-deep text-cream py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Impact</span>
           <h1 className="font-display text-6xl lg:text-9xl uppercase mt-4 leading-[0.9]">
@@ -74,10 +74,10 @@ function Impact() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-4xl lg:text-5xl uppercase mb-12">Inspiring stories</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="font-display text-4xl lg:text-5xl uppercase mb-8">Inspiring stories</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {stories.map((s) => (
               <div key={s.name} className="bg-cream rounded-3xl p-8">
                 <p className="text-muted-foreground italic leading-relaxed">"{s.quote}"</p>
@@ -95,10 +95,10 @@ function Impact() {
       </section>
 
       {/* GALLERY */}
-      <section className="bg-plum text-cream py-24">
+      <section className="bg-plum text-cream py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-4xl lg:text-5xl uppercase mb-12">Highlights</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="font-display text-4xl lg:text-5xl uppercase mb-8">Highlights</h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g) => (
               <div key={g.title} className="group relative overflow-hidden rounded-3xl aspect-[4/3]">
                 <img src={g.src} alt={g.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -111,7 +111,7 @@ function Impact() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-20 bg-cream overflow-hidden">
+      <section className="py-12 md:py-16 bg-cream overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 text-center mb-10">
           <span className="text-xs uppercase tracking-[0.3em] text-coral">Trusted by</span>
           <h2 className="font-display text-4xl uppercase mt-2">Our partners</h2>

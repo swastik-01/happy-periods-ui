@@ -27,7 +27,7 @@ function NMMCEvent() {
         Breaking stigma and empowering thousands of girls across 60+ schools through consistent grassroots education and wellness.
       </PageHero>
 
-      <section className="py-20">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link 
             to="/events" 
