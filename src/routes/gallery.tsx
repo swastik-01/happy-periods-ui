@@ -7,12 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // --- ASSET IMPORTS ---
 // Mijwan
-import m1 from "@/assets/mijwan/WhatsApp Image 2026-05-15 at 14.24.18.jpeg";
-import m2 from "@/assets/mijwan/WhatsApp Image 2026-05-15 at 14.24.19.jpeg";
-import m3 from "@/assets/mijwan/WhatsApp Image 2026-05-15 at 14.24.20.jpeg";
-import m4 from "@/assets/mijwan/WhatsApp Image 2026-05-15 at 14.24.20dd.jpeg";
-import m5 from "@/assets/mijwan/WhatsApp Image 2026-05-15 at 14.24.21ddf.jpeg";
-import m6 from "@/assets/mijwan/asdgadgwef.jpeg";
+import m1 from "@/assets/Mijwan/WhatsApp Image 2026-05-15 at 14.24.18.jpeg";
+import m2 from "@/assets/Mijwan/WhatsApp Image 2026-05-15 at 14.24.19.jpeg";
+import m3 from "@/assets/Mijwan/WhatsApp Image 2026-05-15 at 14.24.20.jpeg";
+import m4 from "@/assets/Mijwan/WhatsApp Image 2026-05-15 at 14.24.20dd.jpeg";
+import m5 from "@/assets/Mijwan/WhatsApp Image 2026-05-15 at 14.24.21ddf.jpeg";
+import m6 from "@/assets/Mijwan/asdgadgwef.jpeg";
 
 // Schools
 import s1 from "@/assets/Schools/dgsagdassssss.jpeg";
