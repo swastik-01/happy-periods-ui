@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProgrammePage } from "@/components/site/ProgrammePage";
-import schoolHero from "@/assets/Schools/dgsagdassssss.jpeg";
-import schoolSessionOne from "@/assets/Schools/sgfdshfssfd.jpeg";
-import schoolSessionTwo from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.41.jpeg";
-import schoolSessionThree from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.42.jpeg";
-import schoolSessionFour from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.43.jpeg";
+import schoolHero from "@/assets/GallerySchools/school-hero.jpeg";
+import schoolSessionOne from "@/assets/GallerySchools/school-session.jpeg";
+import schoolSessionTwo from "@/assets/GallerySchools/school-1.jpeg";
+import schoolSessionThree from "@/assets/GallerySchools/school-2.jpeg";
+import schoolSessionFour from "@/assets/GallerySchools/school-3.jpeg";
 
 export const Route = createFileRoute("/programmes/schools")({
   head: () => ({

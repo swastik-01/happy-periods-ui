@@ -6,12 +6,12 @@ import { ArrowLeft, PlayCircle } from "lucide-react";
 import workshop from "@/assets/home/outreach.jpg";
 
 // Gallery Images
-import m1 from "@/assets/Mijwan/mijwan-1.jpeg";
-import m2 from "@/assets/Mijwan/mijwan-2.jpeg";
-import m3 from "@/assets/Mijwan/mijwan-3.jpeg";
-import m4 from "@/assets/Mijwan/mijwan-4.jpeg";
-import m5 from "@/assets/Mijwan/mijwan-5.jpeg";
-import m6 from "@/assets/Mijwan/mijwan-6.jpeg";
+import m1 from "@/assets/GalleryMijwan/mijwan-1.jpeg";
+import m2 from "@/assets/GalleryMijwan/mijwan-2.jpeg";
+import m3 from "@/assets/GalleryMijwan/mijwan-3.jpeg";
+import m4 from "@/assets/GalleryMijwan/mijwan-4.jpeg";
+import m5 from "@/assets/GalleryMijwan/mijwan-5.jpeg";
+import m6 from "@/assets/GalleryMijwan/mijwan-6.jpeg";
 
 const mijwanGallery = [m1, m2, m3, m4, m5, m6];
 

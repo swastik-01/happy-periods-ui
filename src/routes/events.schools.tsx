@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { motion } from "framer-motion";
 import { ArrowLeft, PlayCircle, Image as ImageIcon } from "lucide-react";
-import school1 from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.41.jpeg";
+import school1 from "@/assets/GallerySchools/school-1.jpeg";
 
 export const Route = createFileRoute("/events/schools")({
   head: () => ({ 

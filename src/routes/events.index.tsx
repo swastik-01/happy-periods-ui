@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import workshop from "@/assets/home/outreach.jpg";
 import outreach from "@/assets/home/outreach.jpg";
 import stage from "@/assets/home/stage.jpg";
-import school1 from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.41.jpeg";
+import school1 from "@/assets/GallerySchools/school-1.jpeg";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({ 

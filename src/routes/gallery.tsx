@@ -7,19 +7,19 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // --- ASSET IMPORTS ---
 // Mijwan
-import m1 from "@/assets/Mijwan/mijwan-1.jpeg";
-import m2 from "@/assets/Mijwan/mijwan-2.jpeg";
-import m3 from "@/assets/Mijwan/mijwan-3.jpeg";
-import m4 from "@/assets/Mijwan/mijwan-4.jpeg";
-import m5 from "@/assets/Mijwan/mijwan-5.jpeg";
-import m6 from "@/assets/Mijwan/mijwan-6.jpeg";
+import m1 from "@/assets/GalleryMijwan/mijwan-1.jpeg";
+import m2 from "@/assets/GalleryMijwan/mijwan-2.jpeg";
+import m3 from "@/assets/GalleryMijwan/mijwan-3.jpeg";
+import m4 from "@/assets/GalleryMijwan/mijwan-4.jpeg";
+import m5 from "@/assets/GalleryMijwan/mijwan-5.jpeg";
+import m6 from "@/assets/GalleryMijwan/mijwan-6.jpeg";
 
 // Schools
-import s1 from "@/assets/Schools/dgsagdassssss.jpeg";
-import s2 from "@/assets/Schools/sgfdshfssfd.jpeg";
-import s3 from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.41.jpeg";
-import s4 from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.42.jpeg";
-import s5 from "@/assets/Schools/WhatsApp Image 2026-05-15 at 13.48.43.jpeg";
+import s1 from "@/assets/GallerySchools/school-hero.jpeg";
+import s2 from "@/assets/GallerySchools/school-session.jpeg";
+import s3 from "@/assets/GallerySchools/school-1.jpeg";
+import s4 from "@/assets/GallerySchools/school-2.jpeg";
+import s5 from "@/assets/GallerySchools/school-3.jpeg";
 
 // Home/Workshops
 import h1 from "@/assets/home/outreach.jpg";
