@@ -57,7 +57,7 @@ function Contact() {
                 <div className="bg-coral text-primary-foreground p-3 rounded-2xl"><Mail size={18}/></div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div>
-                  <a href="mailto:hello@safenhappyperiods.org" className="font-semibold hover:text-coral">hello@safenhappyperiods.org</a>
+                  <a href="mailto:connect@safenhappyperiods.org" className="font-semibold hover:text-coral">connect@safenhappyperiods.org</a>
                 </div>
               </li>
               <li className="flex items-start gap-4">

@@ -85,32 +85,32 @@ const milestones = [
   {
     year: "2016",
     title: "Foundation Established",
-    body: "Safe N Happy Periods was founded under the Amodini Foundation with a vision to eliminate period poverty.",
+    body: "Safe N Happy Periods began as a movement for shame-free, pain-free periods.",
   },
   {
     year: "2016",
     title: "First School Program",
-    body: "Launched our first comprehensive menstrual health education program with Navi Mumbai Municipal Corporation (NMMC) in Navi Mumbai municipal schools, reaching 5,000+ students.",
+    body: "Our first NMMC school outreach opened menstrual health conversations in municipal schools.",
   },
   {
     year: "2018",
     title: "Recognition & Reach",
-    body: "Gained wider recognition with support from Shabana Azmi Ji at the Menstrual Conclave.",
+    body: "Shabana Azmi Ji recognized the work at the Menstrual Conclave.",
   },
   {
     year: "2021",
     title: "Pandora's Box: Lifting the Lid on Menstruation",
-    body: "Pandora's Box: Lifting the Lid on Menstruation featured Safe N Happy Periods in its powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma.",
+    body: "Featured in Pandora's Box, a 75-minute documentary on period poverty and stigma.",
   },
   {
     year: "2022",
     title: "Corporate Partnerships",
-    body: "Expanded partnerships with major corporations to bring menstrual health education to workplaces across India and supported a CSR project with Pepsi in Ghana.",
+    body: "Expanded CSR and workplace partnerships, including PepsiCo Ghana.",
   },
   {
     year: "2024",
     title: "Specialized Programs",
-    body: "Reached over 1.5 million girls and women with specialized Yoga for Periods and Train the Trainer programs.",
+    body: "Scaled yoga and train-the-trainer programs for wider community education.",
   },
 ];
 
@@ -302,9 +302,9 @@ function About() {
                     i % 2 === 0 ? "" : "lg:[&>div]:col-start-2"
                   }`}
                 >
-                  <div className="relative rounded-[8px] border border-border bg-background p-7 shadow-sm">
+                  <div className="relative py-1">
                     <span
-                      className={`absolute top-7 h-4 w-4 rounded-full border-4 border-background bg-primary lg:top-1/2 lg:-translate-y-1/2 ${
+                      className={`absolute top-2 h-4 w-4 rounded-full border-4 border-background bg-primary lg:top-1/2 lg:-translate-y-1/2 ${
                         i % 2 === 0
                           ? "-left-[2.1rem] lg:-right-[2.45rem] lg:left-auto"
                           : "-left-[2.1rem] lg:-left-[2.55rem]"
@@ -325,7 +325,9 @@ function About() {
 
       <section className="bg-primary py-14 text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="font-display text-5xl uppercase">Be part of the next decade.</h2>
+          <h2 className="font-display text-5xl uppercase">
+            Help Shape a Stigma-Free Future.
+          </h2>
           <Link
             to="/get-involved"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 font-semibold text-foreground transition hover:scale-105"

@@ -8,6 +8,7 @@ import field from "@/assets/home/field.jpg";
 import stage from "@/assets/home/stage.jpg";
 import park from "@/assets/home/park.jpg";
 import wall from "@/assets/home/wall.jpg";
+import { VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,7 +32,7 @@ const programs = [
 const stats = [
   { num: "250+", label: "Workshops" },
   { num: "25,000+", label: "Beneficiaries Reached" },
-  { num: "50+", label: "Communities Reached" },
+  { num: "60+", label: "Schools & Colleges" },
   { num: "100,000+", label: "Products Distributed" },
 ];
 
@@ -51,8 +52,8 @@ function Home() {
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-coral mb-6">
               <Sparkles size={14} /> Since 2014
             </span>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-[6.5rem] leading-[0.88] uppercase">
-              Shame-Free.<br />
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-[6.5rem] leading-[0.88] uppercase">
+              <span className="whitespace-nowrap">Shame-Free.</span><br />
               <span className="text-coral">Pain-Free.</span><br />
               Periods.
             </h1>
@@ -85,10 +86,6 @@ function Home() {
                 { src: wall, alt: "Community outreach" },
               ]}
             />
-            <div className="absolute bottom-4 left-4 bg-coral text-primary-foreground px-5 py-3 rounded-[8px] shadow-xl sm:-bottom-6 sm:-left-6 sm:px-6 sm:py-4">
-              <div className="font-display text-3xl">71%</div>
-              <div className="text-xs uppercase tracking-wide">Girls learn at first period</div>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -109,8 +106,7 @@ function Home() {
       <section className="py-12 md:py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <div className="min-w-0 lg:col-span-5">
-            <span className="text-xs uppercase tracking-[0.3em] text-coral">Our Mission</span>
-            <h2 className="font-display text-5xl lg:text-6xl uppercase mt-4 text-balance">
+            <h2 className="font-display text-5xl lg:text-6xl uppercase text-balance">
               Breaking <span className="text-coral">Stigma.</span><br />
               Building <span className="text-coral">Understanding.</span>
             </h2>
@@ -220,9 +216,14 @@ function Home() {
             <Link to="/donate" className="bg-background text-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition">
               Donate
             </Link>
-            <Link to="/about" className="border-2 border-primary-foreground text-primary-foreground px-7 py-4 rounded-full font-semibold hover:bg-primary-foreground hover:text-primary transition">
+            <a
+              href={VOLUNTEER_INTERN_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="border-2 border-primary-foreground text-primary-foreground px-7 py-4 rounded-full font-semibold hover:bg-primary-foreground hover:text-primary transition"
+            >
               Volunteer
-            </Link>
+            </a>
           </div>
         </div>
       </section>

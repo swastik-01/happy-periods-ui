@@ -50,12 +50,12 @@ function Privacy() {
 
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">5. Your rights</h2>
-            <p>You can ask us to access, correct or delete your data at any time. Email <a className="text-coral" href="mailto:hello@safenhappyperiods.org">hello@safenhappyperiods.org</a>.</p>
+            <p>You can ask us to access, correct or delete your data at any time. Email <a className="text-coral" href="mailto:connect@safenhappyperiods.org">connect@safenhappyperiods.org</a>.</p>
           </div>
 
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">6. Contact</h2>
-            <p>Questions? Write to <a className="text-coral" href="mailto:hello@safenhappyperiods.org">hello@safenhappyperiods.org</a>.</p>
+            <p>Questions? Write to <a className="text-coral" href="mailto:connect@safenhappyperiods.org">connect@safenhappyperiods.org</a>.</p>
           </div>
         </div>
       </section>

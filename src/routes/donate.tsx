@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Building2, CalendarHeart, CreditCard, Gift, Heart, Sparkles, type LucideIcon } from "lucide-react";
+import { ArrowRight, Award, Building2, CalendarHeart, Gift, Heart, Sparkles, type LucideIcon } from "lucide-react";
 import donate from "@/assets/donate.jpg";
+import { VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -33,6 +34,14 @@ const monthlyImpact = [
   { amount: "Rs. 300/month", text: "Provides products for one person annually" },
   { amount: "Rs. 500/month", text: "Supports educational workshops" },
   { amount: "Rs. 1,000/month", text: "Sponsors a monthly donation drive" },
+];
+
+const bankDetails = [
+  ["Account Name", "AMODINI FOUNDATION"],
+  ["Bank Name", "Axis Bank"],
+  ["A/c No.", "920010063708622"],
+  ["IFSC Code", "UTIB0000861"],
+  ["Branch", "Kota, Rajasthan"],
 ];
 
 function Donate() {
@@ -110,7 +119,7 @@ function Donate() {
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Bank transfer</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Donate directly</h2>
             <p className="mt-4 text-muted-foreground">
-              Make a contribution via bank transfer or UPI. Submit your donation details after payment so we can issue your receipt.
+              You can donate through bank transfer, QR code, GPay, Paytm, or PhonePe. Submit your donation details after payment so we can issue your receipt.
             </p>
 
             <div className="mt-8 space-y-4 rounded-[8px] border border-border bg-background p-6">
@@ -118,19 +127,17 @@ function Donate() {
                 <Building2 className="text-coral" />
                 <h3 className="font-display text-xl uppercase">Bank Details</h3>
               </div>
-              {[
-                ["Account Name", "Amodini Foundation"],
-                ["Account Number", "920010063708622"],
-                ["Bank", "Axis Bank"],
-                ["Branch", "CBD Belapur"],
-                ["Type", "Savings"],
-              ].map(([label, value]) => (
+              {bankDetails.map(([label, value]) => (
                 <div key={label} className="flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between">
                   <span className="text-xs uppercase tracking-wider text-muted-foreground">{label}</span>
                   <span className="font-mono font-semibold">{value}</span>
                 </div>
               ))}
             </div>
+
+            <p className="mt-5 text-sm font-semibold leading-7 text-coral">
+              All donations to AMODINI Foundation are 50% tax exempt under section 80G of IT Act. For availing income tax benefit please share your complete name, address, PAN No. and payment screenshot at 84250-63301.
+            </p>
 
             <a
               href="https://forms.gle/eUzbparVzZrq4KEz8"
@@ -143,19 +150,25 @@ function Donate() {
           </div>
 
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-coral">UPI / Google Pay</span>
-            <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Scan & pay</h2>
+            <span className="text-xs uppercase tracking-[0.3em] text-coral">QR / UPI</span>
+            <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Scan QR Code</h2>
             <p className="mt-4 text-muted-foreground">
-              Scan the QR code with any UPI app, or upload it directly via "Scan QR from Gallery".
+              Scan the QR code with GPay, Paytm, PhonePe, or any UPI app.
             </p>
             <div className="mt-8 rounded-[8px] border border-border bg-background p-8 text-center">
-              <div className="mx-auto flex aspect-square max-w-xs flex-col items-center justify-center rounded-[8px] border-2 border-dashed border-coral/40 bg-coral/10 p-8">
-                <CreditCard className="text-coral" size={48} />
-                <p className="mt-4 text-sm text-muted-foreground">UPI QR available on request</p>
-                <a href="mailto:hello@safenhappyperiods.org" className="mt-4 text-sm font-semibold text-coral">
-                  Email us for QR <ArrowRight size={14} className="inline" />
-                </a>
-              </div>
+              <object
+                data="/donate-qr.png"
+                type="image/png"
+                aria-label="Donation QR code"
+                className="mx-auto aspect-square w-full max-w-xs rounded-[8px] bg-white object-contain p-4"
+              >
+                <div className="mx-auto flex aspect-square max-w-xs flex-col items-center justify-center rounded-[8px] border-2 border-dashed border-coral/40 bg-coral/10 p-8">
+                  <p className="text-sm font-semibold text-foreground">QR code image pending</p>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                    Save the original QR image as public/donate-qr.png.
+                  </p>
+                </div>
+              </object>
             </div>
           </div>
         </div>
@@ -184,12 +197,14 @@ function Donate() {
             <p className="mt-4 opacity-90">
               Volunteer with us across workshops, content, outreach, logistics, and community programs.
             </p>
-            <Link
-              to="/contact"
+            <a
+              href={VOLUNTEER_INTERN_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-plum-deep px-6 py-3 font-semibold text-cream transition hover:scale-105"
             >
-              Get in touch <ArrowRight size={16} />
-            </Link>
+              Volunteer / intern form <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>

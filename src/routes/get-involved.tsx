@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
-import { PROGRAMME_REGISTER_FORM_URL } from "@/lib/forms";
+import { PROGRAMME_REGISTER_FORM_URL, VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 import { ArrowRight, ClipboardList, Heart, UserPlus } from "lucide-react";
-
-const VOLUNTEER_INTERN_FORM_URL = PROGRAMME_REGISTER_FORM_URL;
 
 export const Route = createFileRoute("/get-involved")({
   head: () => ({
