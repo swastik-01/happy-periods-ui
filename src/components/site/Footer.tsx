@@ -3,7 +3,7 @@ import { Facebook, Globe, Instagram, Linkedin, Mail, MapPin, Phone } from "lucid
 
 import logo from "@/assets/logo-main.svg";
 
-const LOGO = logo;
+const AMODINI_URL = "https://amodinifoundation.org/";
 
 const socialLinks = [
   {
@@ -26,21 +26,18 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="mt-0 bg-secondary text-secondary-foreground dark:bg-plum-deep dark:text-cream/90">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-7 px-4 py-9 sm:px-6 md:grid-cols-12 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-4 py-7 sm:px-6 md:grid-cols-12 lg:px-8">
         <div className="md:col-span-3">
           <Link to="/" className="inline-flex">
             <img
-              src={LOGO}
+              src={logo}
               alt="Safe n' Happy Periods"
               width={320}
               height={94}
-              className="h-20 w-56 object-contain sm:h-24 sm:w-72"
+              className="h-16 w-48 object-contain sm:h-20 sm:w-60"
             />
           </Link>
-          <p className="mt-4 font-display text-2xl uppercase leading-tight text-primary">
-            Creating joyful, empowered lives.
-          </p>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-2 flex w-48 items-center justify-center gap-2 pl-3 sm:w-60">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -48,61 +45,62 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={social.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary-foreground transition hover:border-coral hover:bg-coral hover:text-primary-foreground dark:border-white/15 dark:text-cream"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-secondary-foreground transition hover:border-coral hover:bg-coral hover:text-primary-foreground dark:border-white/15 dark:text-cream"
               >
-                <social.icon size={18} />
+                <social.icon size={17} />
               </a>
             ))}
           </div>
         </div>
 
-        <div className="md:col-span-4">
-          <h4 className="font-display text-xl uppercase text-coral">
-            Amodini Foundation
+        <div className="md:col-span-5">
+          <h4 className="font-display text-lg uppercase text-coral">
+            <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="hover:underline">
+              Amodini Foundation
+            </a>
           </h4>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground dark:text-cream/75">
-            A registered trust under Mumbai Public Trust.
+            Safe n Happy Periods is the flagship project of{" "}
+            <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="font-semibold hover:text-coral">
+              Amodini Foundation
+            </a>
+            , a registered charitable trust under Mumbai Public Trust.
           </p>
-          <ul className="mt-4 space-y-2 text-xs leading-relaxed text-muted-foreground dark:text-cream/80">
+          <ul className="mt-3 space-y-1 text-xs leading-snug text-muted-foreground dark:text-cream/80">
             <li className="flex items-start gap-2">
-              <MapPin size={14} className="mt-1 shrink-0 text-coral" />
-              <span>
-                Kukreja Centre, CBD Belapur, Navi Mumbai - 400614
-              </span>
+              <MapPin size={14} className="mt-0.5 shrink-0 text-coral" />
+              <span>Kukreja Centre, CBD Belapur, Navi Mumbai - 400614</span>
             </li>
             <li className="flex items-start gap-2">
-              <Phone size={14} className="mt-1 shrink-0 text-coral" />
-              <span>
-                <a href="tel:+918425063301" className="hover:text-coral">
-                  +91-84250-63301
-                </a>
-              </span>
+              <Phone size={14} className="mt-0.5 shrink-0 text-coral" />
+              <a href="tel:+918425063301" className="hover:text-coral">
+                +91-84250-63301
+              </a>
             </li>
             <li className="flex items-start gap-2">
-              <Globe size={14} className="mt-1 shrink-0 text-coral" />
+              <Globe size={14} className="mt-0.5 shrink-0 text-coral" />
               <a href="https://www.safenhappyperiods.org" className="hover:text-coral">
                 www.safenhappyperiods.org
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail size={14} className="mt-1 shrink-0 text-coral" />
+              <Mail size={14} className="mt-0.5 shrink-0 text-coral" />
               <a href="mailto:connect@safenhappyperiods.org" className="hover:text-coral">
                 connect@safenhappyperiods.org
               </a>
             </li>
           </ul>
-          <p className="mt-4 max-w-xl text-xs leading-relaxed text-muted-foreground dark:text-cream/75">
-            80G & 12A certified | MCA empanelled | NGO Darpan (NITI Aayog)
-            Registered.
+          <p className="mt-3 text-[11px] leading-snug text-muted-foreground dark:text-cream/70">
+            80G & 12A certified | MCA empanelled | NGO Darpan (NITI Aayog) Registered.
           </p>
         </div>
 
-        <div className="md:col-span-3">
-          <h4 className="font-display text-xl uppercase text-coral">Newsletter</h4>
+        <div className="md:col-span-4">
+          <h4 className="font-display text-lg uppercase text-coral">Newsletter</h4>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground dark:text-cream/75">
             Get updates on workshops, campaigns, and community action.
           </p>
-          <div className="mt-4 flex overflow-hidden rounded-full border border-border bg-background dark:border-white/15">
+          <div className="mt-3 flex overflow-hidden rounded-full border border-border bg-background dark:border-white/15">
             <input
               type="email"
               aria-label="Email address"
@@ -116,48 +114,30 @@ export function Footer() {
               Join
             </button>
           </div>
-        </div>
-
-        <div className="md:col-span-2">
-          <h4 className="font-display text-xl uppercase text-coral">Legal</h4>
-          <ul className="mt-3 space-y-2 text-xs text-muted-foreground dark:text-cream/80">
-            <li>
-              <a
-                href="https://amodinifoundation.org/privacy.html"
-                className="hover:text-coral"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://amodinifoundation.org/terms.html"
-                className="hover:text-coral"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Terms & Conditions
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://amodinifoundation.org/refunds.html"
-                className="hover:text-coral"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Cancellation & Refunds
-              </a>
-            </li>
-          </ul>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground dark:text-cream/80">
+            <a
+              href="https://amodinifoundation.org/privacy.html"
+              className="hover:text-coral"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="https://amodinifoundation.org/terms.html"
+              className="hover:text-coral"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terms & Conditions
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-border dark:border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-muted-foreground dark:text-cream/60 sm:flex-row sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} Safe n' Happy Periods. All rights reserved.</p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-3 text-[11px] text-muted-foreground dark:text-cream/60 sm:flex-row sm:px-6 lg:px-8">
+          <p>&copy; {new Date().getFullYear()} Safe n' Happy Periods. All rights reserved.</p>
           <Link to="/donate" className="hover:text-coral">
             Support the mission
           </Link>

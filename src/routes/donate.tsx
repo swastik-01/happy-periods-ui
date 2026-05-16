@@ -5,18 +5,20 @@ import { ArrowRight, Award, Building2, CalendarHeart, Gift, Heart, Sparkles, typ
 import donate from "@/assets/donate.jpg";
 import { VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 
+const AMODINI_URL = "https://amodinifoundation.org/";
+
 export const Route = createFileRoute("/donate")({
   head: () => ({
     meta: [
       { title: "Donate - Safe n' Happy Periods" },
       {
         name: "description",
-        content: "Donate to Safe n' Happy Periods to support menstrual products and education for orphanages, shelter homes, and underserved communities.",
+        content: "Donate to Safe n' Happy Periods to support menstrual products and education for orphanages, shelter homes, and underprivileged communities.",
       },
       { property: "og:title", content: "Donate - Safe n' Happy Periods" },
       {
         property: "og:description",
-        content: "Providing menstrual products and education to orphanages, shelter homes, and underserved communities.",
+        content: "Providing menstrual products and education to orphanages, shelter homes, and underprivileged communities.",
       },
       { property: "og:image", content: donate },
     ],
@@ -47,33 +49,33 @@ const bankDetails = [
 function Donate() {
   return (
     <SiteLayout>
-      <section className="relative overflow-hidden bg-plum-deep py-12 text-cream md:py-16 lg:py-20">
+      <section className="relative overflow-hidden bg-plum-deep py-10 text-cream md:py-12 lg:py-14">
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-coral/20 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
           <motion.div className="min-w-0 lg:col-span-6">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Donate</span>
             <h1 className="mt-4 font-display text-4xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
               Support dignity.
               <span className="block text-coral">Support access.</span>
             </h1>
-            <p className="mt-7 max-w-[20rem] text-lg leading-8 text-cream/82 sm:max-w-2xl">
-              Providing menstrual products and education to orphanages, shelter homes, and underserved communities.
+            <p className="mt-5 max-w-[20rem] text-base leading-7 text-cream/82 sm:max-w-2xl md:text-lg">
+              Providing menstrual products and education to orphanages, shelter homes, and underprivileged communities.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="#donate-options"
-                className="inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
               >
                 Donate now <ArrowRight size={18} />
               </a>
               <a
                 href="#bank-details"
-                className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-7 py-4 font-semibold text-cream transition hover:bg-cream/10"
+                className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-6 py-3 font-semibold text-cream transition hover:bg-cream/10"
               >
                 Bank details
               </a>
             </div>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/10 px-4 py-2 text-xs">
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/10 px-4 py-2 text-xs">
               <Award size={14} className="text-coral" /> 80G tax exempt for eligible donations
             </div>
           </motion.div>
@@ -87,14 +89,14 @@ function Donate() {
         </div>
       </section>
 
-      <section id="donate-options" className="py-12 md:py-16">
+      <section id="donate-options" className="py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Choose your support</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Every donation moves the work forward.</h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-2">
             <DonationCard
               icon={Gift}
               title="One-Time Donation"
@@ -113,54 +115,70 @@ function Donate() {
         </div>
       </section>
 
-      <section id="bank-details" className="bg-cream py-12 md:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section id="bank-details" className="bg-cream py-8 md:py-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-coral">Bank transfer</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Donate directly</h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
               You can donate through bank transfer, QR code, GPay, Paytm, or PhonePe. Submit your donation details after payment so we can issue your receipt.
             </p>
 
-            <div className="mt-8 space-y-4 rounded-[8px] border border-border bg-background p-6">
-              <div className="flex items-center gap-3 border-b border-border pb-4">
+            <div className="mt-5 space-y-3 rounded-[8px] border border-border bg-background p-4 sm:p-5">
+              <div className="flex items-center gap-3 border-b border-border pb-3">
                 <Building2 className="text-coral" />
-                <h3 className="font-display text-xl uppercase">Bank Details</h3>
+                <h3 className="font-display text-lg uppercase">Bank Details</h3>
               </div>
               {bankDetails.map(([label, value]) => (
-                <div key={label} className="flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between">
+                <div key={label} className="flex flex-col gap-0.5 text-sm sm:flex-row sm:items-center sm:justify-between">
                   <span className="text-xs uppercase tracking-wider text-muted-foreground">{label}</span>
                   <span className="font-mono font-semibold">{value}</span>
                 </div>
               ))}
             </div>
 
-            <p className="mt-5 text-sm font-semibold leading-7 text-coral">
-              All donations to AMODINI Foundation are 50% tax exempt under section 80G of IT Act. For availing income tax benefit please share your complete name, address, PAN No. and payment screenshot at 84250-63301.
+            <p className="mt-4 text-sm font-semibold leading-6 text-coral">
+              All donations to{" "}
+              <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="hover:underline">
+                AMODINI Foundation
+              </a>{" "}
+              are 50% tax exempt under section 80G of IT Act. For availing income tax benefit please share your complete name, address, PAN No. and payment screenshot at 84250-63301.
             </p>
 
             <a
               href="https://forms.gle/eUzbparVzZrq4KEz8"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
             >
               Submit donation details <ArrowRight size={16} />
             </a>
+            <p className="mt-2 text-xs text-muted-foreground">
+              For duplicate or incorrect payments, view our{" "}
+              <a
+                href="https://amodinifoundation.org/refunds.html"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-coral hover:underline"
+              >
+                Cancellation & Refunds
+              </a>
+              .
+            </p>
           </div>
 
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-coral">QR / UPI</span>
             <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">Scan QR Code</h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
               Scan the QR code with GPay, Paytm, PhonePe, or any UPI app.
             </p>
-            <div className="mt-8 rounded-[8px] border border-border bg-background p-8 text-center">
+            <div className="mt-5 rounded-[8px] border border-border bg-background p-4 text-center sm:p-5">
               <object
                 data="/donate-qr.png"
                 type="image/png"
                 aria-label="Donation QR code"
-                className="mx-auto aspect-square w-full max-w-xs rounded-[8px] bg-white object-contain p-4"
+                className="mx-auto aspect-square w-full max-w-[17rem] rounded-[8px] bg-white object-contain p-3"
               >
                 <div className="mx-auto flex aspect-square max-w-xs flex-col items-center justify-center rounded-[8px] border-2 border-dashed border-coral/40 bg-coral/10 p-8">
                   <p className="text-sm font-semibold text-foreground">QR code image pending</p>
@@ -174,34 +192,34 @@ function Donate() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-          <div className="rounded-[8px] bg-plum p-8 text-cream lg:p-10">
+      <section className="py-8 md:py-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+          <div className="rounded-[8px] bg-plum p-6 text-cream lg:p-7">
             <Heart className="text-coral" size={30} />
-            <h3 className="mt-5 font-display text-3xl uppercase">Want to donate pads?</h3>
-            <p className="mt-4 text-cream/80">
+            <h3 className="mt-4 font-display text-3xl uppercase">Want to donate pads?</h3>
+            <p className="mt-3 text-sm leading-6 text-cream/80 md:text-base">
               Share your details if you would like to donate sanitary or reusable cloth pads. We will reach out to coordinate.
             </p>
             <a
               href="https://forms.gle/wgQb1ZsKqNG3cRp9A"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
             >
               Pad donation form <ArrowRight size={16} />
             </a>
           </div>
-          <div className="rounded-[8px] bg-coral p-8 text-primary-foreground lg:p-10">
+          <div className="rounded-[8px] bg-coral p-6 text-primary-foreground lg:p-7">
             <Sparkles className="text-primary-foreground" size={30} />
-            <h3 className="mt-5 font-display text-3xl uppercase">Prefer to give your time?</h3>
-            <p className="mt-4 opacity-90">
+            <h3 className="mt-4 font-display text-3xl uppercase">Prefer to give your time?</h3>
+            <p className="mt-3 text-sm leading-6 opacity-90 md:text-base">
               Volunteer with us across workshops, content, outreach, logistics, and community programs.
             </p>
             <a
               href={VOLUNTEER_INTERN_FORM_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-plum-deep px-6 py-3 font-semibold text-cream transition hover:scale-105"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-plum-deep px-6 py-3 font-semibold text-cream transition hover:scale-105"
             >
               Volunteer / intern form <ArrowRight size={16} />
             </a>
@@ -226,28 +244,28 @@ function DonationCard({
   items: Array<{ amount: string; text: string }>;
 }) {
   return (
-    <div className="flex h-full flex-col rounded-[8px] border border-border bg-background p-7 shadow-sm lg:p-8">
+    <div className="flex h-full flex-col rounded-[8px] border border-border bg-background p-5 shadow-sm lg:p-6">
       <div className="flex items-center gap-3">
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-coral text-primary-foreground">
           <Icon size={24} />
         </span>
         <h3 className="font-display text-3xl uppercase">{title}</h3>
       </div>
-      <p className="mt-5 leading-8 text-muted-foreground">{body}</p>
-      <div className="mt-7">
+      <p className="mt-4 text-sm leading-6 text-muted-foreground md:text-base">{body}</p>
+      <div className="mt-5">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-coral">{heading}</p>
-        <div className="mt-4 space-y-3">
+        <div className="mt-3 space-y-2">
           {items.map((item) => (
-            <div key={item.amount} className="rounded-[8px] bg-muted px-4 py-3">
+            <div key={item.amount} className="rounded-[8px] bg-muted px-4 py-2.5">
               <div className="font-display text-2xl text-foreground">{item.amount}</div>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.text}</p>
+              <p className="text-sm leading-5 text-muted-foreground">{item.text}</p>
             </div>
           ))}
         </div>
       </div>
       <a
         href="#bank-details"
-        className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
+        className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-coral px-6 py-3 font-semibold text-primary-foreground transition hover:scale-105"
       >
         Donate now <ArrowRight size={16} />
       </a>

@@ -5,7 +5,7 @@ import { PROGRAMME_REGISTER_FORM_URL } from "@/lib/forms";
 import workshop from "@/assets/home/outreach.jpg";
 import field from "@/assets/home/field.jpg";
 import stage from "@/assets/home/stage.jpg";
-import park from "@/assets/home/park.jpg";
+import groupPhoto from "@/assets/home/grp photo.jpg";
 import donate from "@/assets/donate.jpg";
 
 export const Route = createFileRoute("/what-we-do")({
@@ -50,7 +50,7 @@ const programs = [
     body: "We simplify the law, clear up the grey areas, and build a culture where safety, respect, and accountability are non-negotiable.",
     cta: "Book a POSH Session",
     href: PROGRAMME_REGISTER_FORM_URL,
-    img: park,
+    img: groupPhoto,
   },
   {
     eyebrow: "04 — Access",

@@ -36,9 +36,9 @@ const appraises = [
 ];
 
 const volunteers = [
-  "Safe N Happy Periods has always been a volunteer-driven non-profit built on the passion, dedication, and collective efforts of people who believe in menstrual health equity and dignity for all. From conducting awareness sessions and community outreach to supporting campaigns, content, logistics, and creative initiatives, volunteers remain at the heart of everything we do.",
+  "Safe n Happy Periods has always been a volunteer-driven non-profit built on the passion, dedication, and collective efforts of people who believe in menstrual health equity and dignity for all. From conducting awareness sessions and community outreach to supporting campaigns, content, logistics, and creative initiatives, volunteers remain at the heart of everything we do.",
   "Over the years, SNHP has welcomed both Indian and international volunteers, creating a diverse and inclusive community united by a shared mission to break stigma and build awareness around menstrual health. Many of our volunteers have joined us through platforms like ConnectFor and AIESEC, contributing their skills, time, and ideas to create meaningful impact across communities.",
-  "Their support has helped us expand conversations around periods, reach underserved groups, and build safe spaces for education, empathy, and change.",
+  "Their support has helped us expand conversations around periods, reach underprivileged groups, and build safe spaces for education, empathy, and change.",
 ];
 
 function WhyUs() {

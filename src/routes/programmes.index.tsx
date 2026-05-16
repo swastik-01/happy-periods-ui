@@ -63,7 +63,7 @@ const items = [
     to: "/programmes/csr",
     icon: Building2,
     title: "CSR",
-    desc: "Measurable menstrual health initiatives for underserved communities and inclusive social impact.",
+    desc: "Measurable menstrual health initiatives for underprivileged communities and inclusive social impact.",
   },
 ];
 
@@ -73,7 +73,7 @@ function Programmes() {
       <PageHero eyebrow="Programmes" title="Our" highlight="programs" image={padDonation}>
         Creating impact through education, access, advocacy, and action.
         <br />
-        From classrooms and campuses to corporate spaces and underserved communities, every Safe N
+        From classrooms and campuses to corporate spaces and underprivileged communities, every Safe n
         Happy Periods initiative is built around dignity, awareness, inclusion, and access ensuring
         menstrual health support reaches those who need it most.
       </PageHero>

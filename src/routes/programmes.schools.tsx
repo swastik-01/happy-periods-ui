@@ -26,12 +26,15 @@ export const Route = createFileRoute("/programmes/schools")({
         intro:
           "Safe, informed, and stigma-free menstrual health education for adolescent girls and early menstruators.",
         hero: schoolHero,
+        showHeroRegister: true,
+        showApply: false,
         whatWeDo: {
           heading: "Safe, informed, and supportive school spaces.",
           paragraphs: [
-            "At Safe N Happy Periods (SNHP), we work with schools to create a safe, informed, and supportive environment around menstrual health for adolescent girls and early menstruators. Our sessions are designed especially for premenarchal girls and girls who have recently started menstruating, helping them understand their bodies with confidence and without fear or stigma.",
-            "Our school programs include interactive menstrual health education seminars focused on understanding puberty, periods, and body changes, along with the importance of menstrual hygiene and healthy practices. We also conduct product awareness sessions, introducing students to different menstrual products and how to use them safely and comfortably. In addition, we incorporate simple yoga and wellness practices that help young girls manage discomfort, stress, and emotional changes associated with menstruation.",
-            "Through age-appropriate conversations and engaging activities, SNHP aims to make menstrual health education accessible, empowering, and stigma-free from an early age.",
+            "SNHP works with schools to create safe, informed, and supportive spaces for adolescent girls and early menstruators.",
+            "Our sessions cover puberty, periods, body changes, menstrual hygiene, product awareness, and healthy practices in an age-appropriate way.",
+            "We also include simple yoga and wellness tools to help students manage discomfort, stress, and emotional changes.",
+            "Every session is designed to build confidence, reduce fear, and make menstrual health stigma-free from an early age.",
           ],
         },
         impact: {
@@ -43,9 +46,10 @@ export const Route = createFileRoute("/programmes/schools")({
             { num: "7yr", label: "Mijwan collaboration" },
           ],
           paragraphs: [
-            "Since 2016, Safe N Happy Periods (SNHP) has been working towards creating safe, informed, and stigma-free spaces for menstrual health education in schools. Our journey began with our first outreach initiative through NMMC, where we connected with 24 schools to start conversations around menstruation, hygiene, and adolescent health at a time when these topics were rarely discussed openly.",
-            "Over the years, SNHP has expanded its impact to more than 60 schools and has reached over 13,000 girls through interactive seminars, awareness drives, and wellness programs focused on menstrual health and hygiene. A significant part of this journey has been our 7-year collaboration with Mijwan Welfare Society, where we have actively conducted targeted school programs to educate and empower young girls with accurate knowledge, confidence, and support around menstruation.",
-            "Through continuous grassroots engagement, SNHP remains committed to ensuring that every girl grows up informed, empowered, and unashamed of her body and health.",
+            "Since 2016, SNHP has built stigma-free menstrual health education spaces across schools and communities.",
+            "The journey began with NMMC outreach across 24 schools, opening conversations around menstruation, hygiene, and adolescent health.",
+            "Today, SNHP has reached 60+ schools and over 13,000 girls through seminars, awareness drives, and wellness programs.",
+            "A 7-year collaboration with Mijwan Welfare Society continues to support young girls with accurate knowledge, confidence, and dignity.",
           ],
           images: [schoolSessionOne, schoolSessionTwo, schoolSessionThree, schoolSessionFour],
         },

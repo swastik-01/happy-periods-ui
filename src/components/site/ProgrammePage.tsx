@@ -24,6 +24,8 @@ export type ProgrammeData = {
     stats?: { num: string; label: string }[];
     images?: string[];
   };
+  showHeroRegister?: boolean;
+  showApply?: boolean;
 };
 
 export function ProgrammePage({ data }: { data: ProgrammeData }) {
@@ -40,8 +42,19 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
         title={data.title}
         highlight={data.highlight}
         image={data.hero}
+        imageShape="wide"
       >
-        {data.intro}
+        <p>{data.intro}</p>
+        {data.showHeroRegister && (
+          <a
+            href={PROGRAMME_REGISTER_FORM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
+          >
+            Register now <ArrowRight size={18} />
+          </a>
+        )}
       </PageHero>
 
       <section id="what-we-do" className="py-12 md:py-16">
@@ -158,25 +171,27 @@ export function ProgrammePage({ data }: { data: ProgrammeData }) {
         </div>
       </section>
 
-      <section id="apply" className="bg-cream py-12 md:py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.3em] text-coral">Register here</span>
-          <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
-            Get this programme at your space
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Register through our Google Form and we'll be in touch within 48 hours.
-          </p>
-          <a
-            href={PROGRAMME_REGISTER_FORM_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
-          >
-            Register now <ArrowRight size={18} />
-          </a>
-        </div>
-      </section>
+      {data.showApply !== false && (
+        <section id="apply" className="bg-cream py-12 md:py-16">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <span className="text-xs uppercase tracking-[0.3em] text-coral">Register here</span>
+            <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+              Get this programme at your space
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Register through our Google Form and we'll be in touch within 48 hours.
+            </p>
+            <a
+              href={PROGRAMME_REGISTER_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
+            >
+              Register now <ArrowRight size={18} />
+            </a>
+          </div>
+        </section>
+      )}
     </SiteLayout>
   );
 }

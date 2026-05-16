@@ -27,8 +27,8 @@ import h2 from "@/assets/home/field.jpg";
 import h3 from "@/assets/donate.jpg";
 import h4 from "@/assets/home/outreach.jpg";
 import h5 from "@/assets/home/stage.jpg";
-import h6 from "@/assets/home/park.jpg";
-import h7 from "@/assets/home/wall.jpg";
+import h6 from "@/assets/home/grp photo.jpg";
+import h7 from "@/assets/home/mhm day 2018.jpg";
 
 // News/Media
 import n1 from "@/assets/news/forbes.png";

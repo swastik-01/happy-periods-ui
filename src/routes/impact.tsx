@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
-import wall from "@/assets/home/wall.jpg";
+import stage from "@/assets/home/stage.jpg";
 import workshop from "@/assets/home/outreach.jpg";
 import impact1 from "@/assets/impact/impact1.jpg";
 import impact2 from "@/assets/impact/impact2.jpg";
@@ -34,7 +34,7 @@ const stories = [
     name: "Shabana Azmi",
     role: "Founder — Mizwan Welfare Society",
     quote: "Grateful to Shabana Azmi Ji for mentioning Safe n' Happy Periods at the Menstrual Conclave organized by the Nine Movement on the occasion of MHM 2018.",
-    img: wall,
+    img: stage,
   },
   {
     name: "Yasemein Daldal",

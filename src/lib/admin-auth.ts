@@ -1,5 +1,5 @@
-export const ADMIN_USERNAME = "admin";
-export const ADMIN_PASSWORD = "shp2026";
+export const ADMIN_USERNAME = "";
+export const ADMIN_PASSWORD = "admin@";
 export const ADMIN_SESSION_KEY = "shp_admin_session";
 
 export function isAdminAuthed(): boolean {

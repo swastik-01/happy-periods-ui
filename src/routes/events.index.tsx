@@ -7,6 +7,8 @@ import workshop from "@/assets/home/outreach.jpg";
 import outreach from "@/assets/home/outreach.jpg";
 import stage from "@/assets/home/stage.jpg";
 import school1 from "@/assets/GallerySchools/school-1.jpeg";
+import mijwanHero from "@/assets/GalleryMijwan/mijwan-event-hero.jpg";
+import nmmcHero from "@/assets/GalleryNmmc/nmmc-event-hero.jpg";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({ 
@@ -75,18 +77,18 @@ function Events() {
       </PageHero>
 
       <div className="bg-background">
-        <EventSection title="Mijwan" image={workshop} to="/events/mijwan">
+        <EventSection title="Mijwan" image={mijwanHero} to="/events/mijwan">
           <p>
-            Safe N’ Happy Periods (SNHP) is a personal social impact initiative founded by Sarika Gupta with the vision of creating a shame-free and pain-free approach towards menstruation.
+            Safe n’ Happy Periods (SNHP) is a personal social impact initiative founded by Sarika Gupta with the vision of creating a shame-free and pain-free approach towards menstruation.
           </p>
           <p>
-            One of the most meaningful and long-standing collaborations in SNHP’s journey has been with Mijwan Welfare Society and its stitching centres and schools. Over the past seven years this partnership has enabled SNHP to conduct menstrual health awareness workshops for girls from underserved communities.
+            One of the most meaningful and long-standing collaborations in SNHP’s journey has been with Mijwan Welfare Society and its stitching centres and schools. Over the past seven years this partnership has enabled SNHP to conduct menstrual health awareness workshops for girls from underprivileged communities.
           </p>
         </EventSection>
 
-        <EventSection title="NMMC" image={outreach} reverse to="/events/nmmc">
+        <EventSection title="NMMC" image={nmmcHero} reverse to="/events/nmmc">
           <p>
-            Safe N Happy Periods (SNHP) has played an important role in creating awareness around menstrual health and hygiene through its extensive work with NMMC since 2016.
+            Safe n Happy Periods (SNHP) has played an important role in creating awareness around menstrual health and hygiene through its extensive work with NMMC since 2016.
           </p>
           <p>
             At a time when conversations around menstruation were still considered uncomfortable and stigmatized in many communities SNHP began working at the grassroots level to make menstrual education more accessible informed and stigma-free.
@@ -95,7 +97,7 @@ function Events() {
 
         <EventSection title="CSR Initiatives" image={stage} to="/events/csr">
           <p>
-            Safe N Happy Periods (SNHP) has consistently worked towards expanding conversations around menstrual health awareness beyond classrooms and local communities through collaborations partnerships and CSR-driven initiatives.
+            Safe n Happy Periods (SNHP) has consistently worked towards expanding conversations around menstrual health awareness beyond classrooms and local communities through collaborations partnerships and CSR-driven initiatives.
           </p>
           <p>
             One such significant milestone in SNHP’s journey was its association with CSR initiatives connected to Accra and PepsiCo reflecting the growing importance of menstrual health awareness at a global level.
@@ -104,7 +106,7 @@ function Events() {
 
         <EventSection title="Schools & Colleges" image={school1} reverse to="/events/schools">
           <p>
-            Safe N Happy Periods (SNHP) has built a strong grassroots movement around menstrual health awareness through its extensive school and college outreach programs across different cities and communities in India.
+            Safe n Happy Periods (SNHP) has built a strong grassroots movement around menstrual health awareness through its extensive school and college outreach programs across different cities and communities in India.
           </p>
           <p>
             The organization’s journey in educational institutions began with the vision of ensuring that menstrual health education reaches students at an early age especially girls navigating puberty for the first time.

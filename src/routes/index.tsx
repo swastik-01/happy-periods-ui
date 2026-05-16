@@ -6,8 +6,8 @@ import { HeroCarousel } from "@/components/site/HeroCarousel";
 import workshop from "@/assets/home/outreach.jpg";
 import field from "@/assets/home/field.jpg";
 import stage from "@/assets/home/stage.jpg";
-import park from "@/assets/home/park.jpg";
-import wall from "@/assets/home/wall.jpg";
+import groupPhoto from "@/assets/home/grp photo.jpg";
+import mhmDay from "@/assets/home/mhm day 2018.jpg";
 import { VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 
 export const Route = createFileRoute("/")({
@@ -26,14 +26,14 @@ export const Route = createFileRoute("/")({
 const programs = [
   { icon: GraduationCap, title: "Awareness Workshops", desc: "Menstrual health & hygiene sessions for schools, colleges, and rural communities.", to: "/programmes/schools" },
   { icon: Flower2, title: "Yoga Sessions", desc: "Movement, breathing, and relaxation practices for menstrual wellness.", to: "/programmes/yoga" },
-  { icon: Gift, title: "Pad Donation", desc: "Sanitary product drives reaching the most under-served communities.", to: "/donate" },
+  { icon: Gift, title: "Pad Donation", desc: "Sanitary product drives reaching the most underprivileged communities.", to: "/donate" },
 ];
 
 const stats = [
   { num: "250+", label: "Workshops" },
   { num: "25,000+", label: "Beneficiaries Reached" },
   { num: "60+", label: "Schools & Colleges" },
-  { num: "100,000+", label: "Products Distributed" },
+  { num: "100,000+", label: "Sanitary Pads" },
 ];
 
 const homeVideoId = "fki-a5Vj5M8";
@@ -82,8 +82,8 @@ function Home() {
                 { src: workshop, alt: "Workshop participants" },
                 { src: field, alt: "Field session" },
                 { src: stage, alt: "Stage performance" },
-                { src: park, alt: "Workshop in a park" },
-                { src: wall, alt: "Community outreach" },
+                { src: groupPhoto, alt: "Group photo from a community program" },
+                { src: mhmDay, alt: "Menstrual Hygiene Day event" },
               ]}
             />
           </motion.div>
@@ -135,8 +135,7 @@ function Home() {
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
               <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3">
-                Action across <br />
-                <span className="text-coral">three fronts.</span>
+                Action across <span className="text-coral">three fronts.</span>
               </h2>
             </div>
             <Link to="/programmes" className="text-secondary-foreground/80 hover:text-primary inline-flex items-center gap-2">
@@ -178,7 +177,7 @@ function Home() {
               Pandora's Box.
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              In 2021, Safe N Happy Periods was featured in Pandora's Box: Lifting the Lid on Menstruation, a powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma. The documentary shed light on the urgent need for awareness, accessibility, and open conversations around menstruation, while showcasing SNHP's efforts toward creating a more informed and stigma-free society.
+              In 2021, Safe n Happy Periods was featured in Pandora's Box: Lifting the Lid on Menstruation, a powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma. The documentary shed light on the urgent need for awareness, accessibility, and open conversations around menstruation, while showcasing SNHP's efforts toward creating a more informed and stigma-free society.
             </p>
           </div>
           <div className="min-w-0 lg:col-span-8">
@@ -186,7 +185,7 @@ function Home() {
               <iframe
                 className="h-full w-full"
                 src={`https://www.youtube-nocookie.com/embed/${homeVideoId}?start=${homeVideoStart}`}
-                title="Pandora's Box: Lifting the Lid on Menstruation featuring Safe N Happy Periods"
+                title="Pandora's Box: Lifting the Lid on Menstruation featuring Safe n Happy Periods"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

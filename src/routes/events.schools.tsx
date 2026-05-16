@@ -38,7 +38,7 @@ function SchoolsEvent() {
 
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight">
             <p className="text-xl text-foreground font-medium leading-relaxed mb-8">
-              Safe N Happy Periods (SNHP) has built a strong grassroots movement around menstrual health awareness through its extensive school and college outreach programs across different cities and communities in India.
+              Safe n Happy Periods (SNHP) has built a strong grassroots movement around menstrual health awareness through its extensive school and college outreach programs across different cities and communities in India.
             </p>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">

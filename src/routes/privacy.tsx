@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 
+const AMODINI_URL = "https://amodinifoundation.org/";
+
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
@@ -26,7 +28,13 @@ function Privacy() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-8 text-muted-foreground leading-relaxed">
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">1. Who we are</h2>
-            <p>Safe n' Happy Periods (SNHP) is a flagship project of the Amodini Foundation, a registered non-profit based in Mumbai, India. This policy applies to <strong>safenhappyperiods.org</strong>.</p>
+            <p>
+              Safe n' Happy Periods (SNHP) is a flagship project of the{" "}
+              <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="text-coral hover:underline">
+                Amodini Foundation
+              </a>
+              , a registered non-profit based in Mumbai, India. This policy applies to <strong>safenhappyperiods.org</strong>.
+            </p>
           </div>
 
           <div>

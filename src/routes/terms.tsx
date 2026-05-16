@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 
+const AMODINI_URL = "https://amodinifoundation.org/";
+
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
@@ -30,7 +32,13 @@ function Terms() {
           </div>
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">2. Use of content</h2>
-            <p>All content — words, images, branding — belongs to Amodini Foundation / Safe n' Happy Periods unless credited. You may share with attribution; commercial reuse requires permission.</p>
+            <p>
+              All content — words, images, branding — belongs to{" "}
+              <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="text-coral hover:underline">
+                Amodini Foundation
+              </a>{" "}
+              / Safe n' Happy Periods unless credited. You may share with attribution; commercial reuse requires permission.
+            </p>
           </div>
           <div id="cancellation-refunds">
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">3. Donations</h2>
@@ -46,7 +54,13 @@ function Terms() {
           </div>
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">6. Limitation of liability</h2>
-            <p>The site is provided "as is". SNHP / Amodini Foundation is not liable for any loss arising from use of the site or its content.</p>
+            <p>
+              The site is provided "as is". SNHP /{" "}
+              <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="text-coral hover:underline">
+                Amodini Foundation
+              </a>{" "}
+              is not liable for any loss arising from use of the site or its content.
+            </p>
           </div>
           <div>
             <h2 className="font-display text-2xl uppercase text-foreground mb-3">7. Governing law</h2>

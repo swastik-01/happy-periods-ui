@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProgrammePage } from "@/components/site/ProgrammePage";
-import padDonation from "@/assets/donate.jpg";
+import corporateHero from "@/assets/home/People Analytics Conf.jpg";
 import field from "@/assets/home/field.jpg";
 import outreach from "@/assets/home/outreach.jpg";
 
@@ -23,13 +23,15 @@ export const Route = createFileRoute("/programmes/impact-partner")({
         title: "Corporate Partnerships.",
         intro:
           "Partnerships that sustain menstrual health education, pad donation drives, and grassroots outreach.",
-        hero: padDonation,
+        hero: corporateHero,
+        showHeroRegister: true,
+        showApply: false,
         whatWeDo: {
           heading: "Partner with us for long-term impact.",
           paragraphs: [
-            "At Safe N Happy Periods (SNHP), our Impact Partners are the individuals, organizations, and collaborators who support our mission through long-term partnerships, sponsorships, and consistent community engagement.",
+            "At Safe n Happy Periods (SNHP), our Impact Partners are the individuals, organizations, and collaborators who support our mission through long-term partnerships, sponsorships, and consistent community engagement.",
             "Whether through small recurring contributions, collaborative initiatives, or continued advocacy, their support helps us sustain menstrual health education, awareness programs, pad donation drives, and grassroots outreach efforts.",
-            "Impact Partners play an important role in helping SNHP expand its reach and create lasting change by enabling us to continue working with schools, communities, workplaces, and underserved groups over the years. Together, we are building a stronger, more informed, and stigma-free future around menstrual health.",
+            "Impact Partners play an important role in helping SNHP expand its reach and create lasting change by enabling us to continue working with schools, communities, workplaces, and underprivileged groups over the years. Together, we are building a stronger, more informed, and stigma-free future around menstrual health.",
           ],
         },
         impact: {

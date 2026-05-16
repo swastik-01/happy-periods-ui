@@ -13,6 +13,8 @@ import anisha from "@/assets/team/anisha-nair.jpeg";
 import aboutHero from "@/assets/about-hero.jpg";
 import storyWorkshop from "@/assets/about-story-workshop.jpg";
 
+const AMODINI_URL = "https://amodinifoundation.org/";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -45,19 +47,25 @@ type TeamMember = {
 const team = [
   {
     name: "Sarika Gupta",
-    role: "Founder - Safe N Happy Periods",
+    role: "Founder - Safe n Happy Periods",
     bio: "Impact-driven education leader with 24+ years of experience designing, implementing, and scaling programs that improve learning outcomes across schools, government bodies, and NGOs to drive inclusive educational impact.",
     image: sarika,
   },
   {
     name: "Rajni Gupta",
-    role: "Cofounder - Safe N Happy Periods",
+    role: "Trustee",
     bio: "With over a decade of experience as a primary education specialist, Rajni is passionate about nurturing young minds and creating inclusive, joyful learning spaces.",
     image: rajni,
   },
   {
+    name: "Ragini Gupta",
+    role: "Yoga and Wellness Support",
+    bio: "A Seattle-based yoga practitioner who works with Renewal Food Bank and supports the wellness and yoga component of menstrual health initiatives.",
+    image: ragini,
+  },
+  {
     name: "Dr. Swapnil Gupta",
-    role: "Trustee - Amodini Foundation",
+    role: "Curriculum Advisor",
     bio: "A medicine doctor based in Dallas, USA, Dr. Swapnil brings a healthcare-driven perspective and a deep commitment to community health and women's well-being.",
     image: swapnil,
   },
@@ -66,12 +74,6 @@ const team = [
     role: "Design Specialist",
     bio: "Leads creative and visual communication across websites, brochures, branding, and campaign creatives to make menstrual health awareness more engaging and accessible.",
     image: mukesh,
-  },
-  {
-    name: "Ragini Gupta",
-    role: "Yoga and Wellness Support",
-    bio: "A Seattle-based yoga practitioner who works with Renewal Food Bank and supports the wellness and yoga component of menstrual health initiatives.",
-    image: ragini,
   },
   {
     name: "Anisha Nair",
@@ -85,7 +87,7 @@ const milestones = [
   {
     year: "2016",
     title: "Foundation Established",
-    body: "Safe N Happy Periods began as a movement for shame-free, pain-free periods.",
+    body: "Safe n Happy Periods began as a movement for shame-free, pain-free periods.",
   },
   {
     year: "2016",
@@ -168,7 +170,7 @@ function About() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Safe N Happy Periods began in February 2016, when Sarika Gupta set out to
+                  Safe n Happy Periods began in February 2016, when Sarika Gupta set out to
                   challenge the silence and stigma surrounding menstruation. What started as a small
                   initiative from a living room soon grew into a powerful movement dedicated to
                   making menstrual health education accessible, conversations more open, and hygiene
@@ -178,7 +180,7 @@ function About() {
                   Built on empathy, dignity, and the belief that no one should feel shame for a
                   natural biological process, SNHP works to create a world where periods are
                   understood, supported, and normalized. Through awareness workshops, community
-                  outreach, campaigns, and on-ground initiatives, Safe N Happy Periods empowers
+                  outreach, campaigns, and on-ground initiatives, Safe n Happy Periods empowers
                   individuals with knowledge, confidence, and access to menstrual care.
                 </p>
                 <p>
@@ -226,10 +228,20 @@ function About() {
         </div>
       </section>
 
-      <Section id="amodini" title="Amodini Foundation">
+      <Section
+        id="amodini"
+        title={
+          <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
+            Amodini Foundation
+          </a>
+        }
+      >
         <p>
-          Founded in 2018 by Sarika, Amodini Foundation was born from a vision to create a society
-          where girls and women live with dignity, free from taboos and limitations. "Amodini" means
+          Founded in 2018 by Sarika,{" "}
+          <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:underline">
+            Amodini Foundation
+          </a>{" "}
+          was born from a vision to create a society where girls and women live with dignity, free from taboos and limitations. "Amodini" means
           joyful girl or woman, and that lies at the heart of all we do.
         </p>
         <p>
@@ -274,7 +286,18 @@ function About() {
                   )}
                 </div>
                 <h3 className="mt-5 font-display text-3xl uppercase text-primary">{m.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-foreground">{m.role}</p>
+                <p className="mt-1 text-sm font-semibold text-foreground">
+                  {m.role.includes("Amodini Foundation") ? (
+                    <>
+                      {m.role.replace("Amodini Foundation", "")}
+                      <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="text-primary hover:underline">
+                        Amodini Foundation
+                      </a>
+                    </>
+                  ) : (
+                    m.role
+                  )}
+                </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
               </motion.div>
             ))}
@@ -348,7 +371,7 @@ function Section({
 }: {
   id: string;
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   children: ReactNode;
 }) {
   return (

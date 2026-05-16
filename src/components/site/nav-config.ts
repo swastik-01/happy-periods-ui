@@ -51,7 +51,7 @@ export const NAV: NavItem[] = [
     ],
   },
   {
-    label: "Resources",
+    label: "Impacts",
     children: [
       { to: "/resources", label: "All Resources", desc: "Index" },
       { to: "/resources#reports", label: "Reports", desc: "Annual & impact" },
@@ -61,7 +61,7 @@ export const NAV: NavItem[] = [
     ],
   },
   {
-    label: "Gallery",
+    label: "Media",
     children: [
       { to: "/gallery", label: "Overview", desc: "Pics, video, stories" },
       { to: "/gallery#pics", label: "Pictures", desc: "Field moments" },

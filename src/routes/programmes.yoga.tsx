@@ -22,10 +22,12 @@ export const Route = createFileRoute("/programmes/yoga")({
         intro:
           "Beginner-friendly movement, breathing, and relaxation practices that support menstrual wellness.",
         hero: field,
+        showHeroRegister: true,
+        showApply: false,
         whatWeDo: {
           heading: "Movement and body awareness for menstrual wellness.",
           paragraphs: [
-            "At Safe N Happy Periods (SNHP), we conduct yoga and wellness workshops designed to help girls and women better understand and manage their menstrual health through movement, breathing practices, and body awareness.",
+            "At Safe n Happy Periods (SNHP), we conduct yoga and wellness workshops designed to help girls and women better understand and manage their menstrual health through movement, breathing practices, and body awareness.",
             "Our sessions focus on simple beginner-friendly yoga asanas and relaxation techniques that support menstrual wellness by helping relieve common concerns such as cramps, discomfort, stress, fatigue, and irregular flow patterns.",
             "These workshops aim to create a holistic and positive approach towards periods while encouraging young girls to connect with their bodies confidently and without stigma.",
           ],

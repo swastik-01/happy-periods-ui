@@ -23,10 +23,12 @@ export const Route = createFileRoute("/programmes/train-the-trainer")({
         intro:
           "A multiplier program that equips educators and advocates to lead confident menstrual health conversations.",
         hero: outreach,
+        showHeroRegister: true,
+        showApply: false,
         whatWeDo: {
           heading: "Build confident menstrual health educators.",
           paragraphs: [
-            "The Train the Trainer Program by Safe N Happy Periods (SNHP) is designed to empower individuals with accurate menstrual health knowledge and effective teaching skills so they can become educators and advocates within their own communities.",
+            "The Train the Trainer Program by Safe n Happy Periods (SNHP) is designed to empower individuals with accurate menstrual health knowledge and effective teaching skills so they can become educators and advocates within their own communities.",
             "The program focuses on building confidence in conducting menstrual health conversations, workshops, and awareness sessions while breaking stigma and misinformation around periods.",
             "By creating a network of trained educators, SNHP aims to ensure that menstrual health education reaches more schools, colleges, workplaces, and communities through sustainable peer-led awareness and grassroots impact.",
           ],

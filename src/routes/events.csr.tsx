@@ -38,7 +38,7 @@ function CSREvent() {
 
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight">
             <p className="text-xl text-foreground font-medium leading-relaxed mb-8">
-              Safe N Happy Periods (SNHP) has consistently worked towards expanding conversations around menstrual health awareness beyond classrooms and local communities through collaborations partnerships and CSR-driven initiatives.
+              Safe n Happy Periods (SNHP) has consistently worked towards expanding conversations around menstrual health awareness beyond classrooms and local communities through collaborations partnerships and CSR-driven initiatives.
             </p>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -64,7 +64,7 @@ function CSREvent() {
               </div>
 
               <p>
-                SNHP’s work across schools colleges workplaces and underserved communities over the years helped shape the foundation of these larger collaborations. With experience reaching more than 60 schools and over 13,000 girls through seminars workshops yoga sessions pad donation drives and community outreach initiatives SNHP brought strong grassroots understanding into CSR-led spaces.
+                SNHP’s work across schools colleges workplaces and underprivileged communities over the years helped shape the foundation of these larger collaborations. With experience reaching more than 60 schools and over 13,000 girls through seminars workshops yoga sessions pad donation drives and community outreach initiatives SNHP brought strong grassroots understanding into CSR-led spaces.
               </p>
               
               <p>

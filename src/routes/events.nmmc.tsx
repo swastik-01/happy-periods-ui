@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { motion } from "framer-motion";
 import { ArrowLeft, PlayCircle, Image as ImageIcon } from "lucide-react";
-import outreach from "@/assets/home/outreach.jpg";
+import nmmcHero from "@/assets/GalleryNmmc/nmmc-event-hero.jpg";
 
 export const Route = createFileRoute("/events/nmmc")({
   head: () => ({ 
@@ -22,7 +22,7 @@ function NMMCEvent() {
         eyebrow="Events" 
         title="NMMC" 
         highlight="Initiative" 
-        image={outreach}
+        image={nmmcHero}
       >
         Breaking stigma and empowering thousands of girls across 60+ schools through consistent grassroots education and wellness.
       </PageHero>
@@ -38,7 +38,7 @@ function NMMCEvent() {
 
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight">
             <p className="text-xl text-foreground font-medium leading-relaxed mb-8">
-              Safe N Happy Periods (SNHP) has played an important role in creating awareness around menstrual health and hygiene through its extensive work with NMMC since 2016.
+              Safe n Happy Periods (SNHP) has played an important role in creating awareness around menstrual health and hygiene through its extensive work with NMMC since 2016.
             </p>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">

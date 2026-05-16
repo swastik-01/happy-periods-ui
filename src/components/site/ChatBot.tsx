@@ -8,7 +8,7 @@ const actions = [
   { label: "Donate now", href: "/donate" },
   { label: "Book a workshop", href: PROGRAMME_REGISTER_FORM_URL, external: true },
   { label: "Volunteer / intern", href: VOLUNTEER_INTERN_FORM_URL, external: true },
-  { label: "Amodini Foundation", href: "/about#amodini" },
+  { label: "Amodini Foundation", href: "https://amodinifoundation.org/", external: true },
   { label: "Contact us", href: "/contact" },
 ];
 
@@ -70,7 +70,7 @@ export function ChatBot() {
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-[90%] rounded-2xl rounded-bl-sm bg-white px-4 py-3 text-sm leading-6 text-plum-deep shadow-sm"
               >
-                Hi, I am Aanya from Safe N Happy Periods. Choose an option below and I will take you to the right place.
+                Hi, I am Aanya from Safe n Happy Periods. Choose an option below and I will take you to the right place.
               </motion.div>
 
               <div className="mt-4 grid gap-2">

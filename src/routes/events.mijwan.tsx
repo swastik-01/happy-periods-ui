@@ -3,9 +3,9 @@ import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { motion } from "framer-motion";
 import { ArrowLeft, PlayCircle } from "lucide-react";
-import workshop from "@/assets/home/outreach.jpg";
 
 // Gallery Images
+import mijwanHero from "@/assets/GalleryMijwan/mijwan-event-hero.jpg";
 import m1 from "@/assets/GalleryMijwan/mijwan-1.jpeg";
 import m2 from "@/assets/GalleryMijwan/mijwan-2.jpeg";
 import m3 from "@/assets/GalleryMijwan/mijwan-3.jpeg";
@@ -13,7 +13,7 @@ import m4 from "@/assets/GalleryMijwan/mijwan-4.jpeg";
 import m5 from "@/assets/GalleryMijwan/mijwan-5.jpeg";
 import m6 from "@/assets/GalleryMijwan/mijwan-6.jpeg";
 
-const mijwanGallery = [m1, m2, m3, m4, m5, m6];
+const mijwanGallery = [mijwanHero, m1, m2, m3, m4, m5, m6];
 
 export const Route = createFileRoute("/events/mijwan")({
   head: () => ({ 
@@ -32,9 +32,9 @@ function MijwanEvent() {
         eyebrow="Events" 
         title="Mijwan" 
         highlight="Collaboration" 
-        image={m1}
+        image={mijwanHero}
       >
-        A transformative seven-year journey of empowering girls from underserved communities through menstruation hygiene, body literacy, and self-care.
+        A transformative seven-year journey of empowering girls from underprivileged communities through menstruation hygiene, body literacy, and self-care.
       </PageHero>
 
       <section className="py-12 md:py-16">
@@ -48,7 +48,7 @@ function MijwanEvent() {
 
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight">
             <p className="text-xl text-foreground font-medium leading-relaxed mb-8">
-              Safe N’ Happy Periods (SNHP) is a personal social impact initiative founded by Sarika Gupta with the vision of creating a shame-free and pain-free approach towards menstruation.
+              Safe n’ Happy Periods (SNHP) is a personal social impact initiative founded by Sarika Gupta with the vision of creating a shame-free and pain-free approach towards menstruation.
             </p>
             
             <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -57,7 +57,7 @@ function MijwanEvent() {
               </p>
               
               <p>
-                One of the most meaningful and long-standing collaborations in SNHP’s journey has been with Mijwan Welfare Society and its stitching centres and schools. Over the past seven years this partnership has enabled SNHP to conduct menstrual health awareness workshops for girls from underserved communities creating safe spaces where young students could openly learn about menstruation hygiene body literacy and self-care. What initially began as sessions within the Mijwan community soon expanded as nearby schools also requested workshops for their students after witnessing the positive impact created among the girls.
+                One of the most meaningful and long-standing collaborations in SNHP’s journey has been with Mijwan Welfare Society and its stitching centres and schools. Over the past seven years this partnership has enabled SNHP to conduct menstrual health awareness workshops for girls from underprivileged communities creating safe spaces where young students could openly learn about menstruation hygiene body literacy and self-care. What initially began as sessions within the Mijwan community soon expanded as nearby schools also requested workshops for their students after witnessing the positive impact created among the girls.
               </p>
 
               <div className="my-12 not-prose">
