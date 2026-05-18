@@ -2,13 +2,51 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, FileText } from "lucide-react";
 import workshop from "@/assets/home/outreach.jpg";
 import outreach from "@/assets/home/outreach.jpg";
 import stage from "@/assets/home/stage.jpg";
 import school1 from "@/assets/GallerySchools/school-1.jpeg";
 import mijwanHero from "@/assets/GalleryMijwan/mijwan-event-hero.jpg";
 import nmmcHero from "@/assets/GalleryNmmc/nmmc-event-hero.jpg";
+
+const reports = [
+  {
+    title: "Ghana Visit Article",
+    desc: "CSR outreach and menstrual health awareness work in Ghana.",
+    href: "/reports/ghana-visit-article.pdf",
+  },
+  {
+    title: "Mijwan Report 2017",
+    desc: "Early Mijwan Welfare Society collaboration report.",
+    href: "/reports/mijwan-report-2017.pdf",
+  },
+  {
+    title: "Mijwan Report 2023",
+    desc: "Menstrual health awareness work with Mijwan communities.",
+    href: "/reports/mijwan-report-2023.pdf",
+  },
+  {
+    title: "Mijwan Report Oct 2024",
+    desc: "Latest Mijwan program report and community outcomes.",
+    href: "/reports/mijwan-report-oct-2024.pdf",
+  },
+  {
+    title: "NMMC Project Report 2016 - English",
+    desc: "Navi Mumbai Municipal Corporation school outreach report.",
+    href: "/reports/nmmc-project-report-2016-english.pdf",
+  },
+  {
+    title: "NMMC Project Report 2016 - Hindi",
+    desc: "Hindi version of the NMMC school outreach report.",
+    href: "/reports/nmmc-project-report-2016-hindi.pdf",
+  },
+  {
+    title: "Sion Hospital Nursing Girls Report",
+    desc: "Menstrual health session report for nursing students.",
+    href: "/reports/sion-hospital-report-nursing-girls.pdf",
+  },
+];
 
 export const Route = createFileRoute("/events/")({
   head: () => ({ 
@@ -76,7 +114,7 @@ function Events() {
         From powerful summits to grassroots workshops, awareness drives to community circles — our events bring menstrual health into classrooms, boardrooms, streets and everyday conversations.
       </PageHero>
 
-      <div className="bg-background">
+      <div id="stories" className="bg-background">
         <EventSection title="Mijwan" image={mijwanHero} to="/events/mijwan">
           <p>
             Safe n’ Happy Periods (SNHP) is a personal social impact initiative founded by Sarika Gupta with the vision of creating a shame-free and pain-free approach towards menstruation.
@@ -113,6 +151,42 @@ function Events() {
           </p>
         </EventSection>
       </div>
+
+      <section id="reports" className="bg-cream py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4">
+            <FileText className="text-coral" size={28} />
+            <div>
+              <span className="text-xs uppercase tracking-[0.3em] text-coral">Reports</span>
+              <h2 className="mt-2 font-display text-4xl uppercase lg:text-5xl">
+                Project reports and documentation.
+              </h2>
+            </div>
+          </div>
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {reports.map((report) => (
+              <a
+                key={report.href}
+                href={report.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group rounded-[8px] border border-border bg-background p-6 transition hover:border-coral hover:-translate-y-1"
+              >
+                <FileText className="text-coral" size={26} />
+                <h3 className="mt-5 font-display text-2xl uppercase leading-tight">
+                  {report.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {report.desc}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-coral transition group-hover:gap-3">
+                  View PDF <Download size={14} />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }

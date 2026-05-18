@@ -3,6 +3,18 @@ import { SiteLayout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { PROGRAMME_REGISTER_FORM_URL, VOLUNTEER_INTERN_FORM_URL } from "@/lib/forms";
 import { ArrowRight, ClipboardList, Heart, UserPlus } from "lucide-react";
+import volunteersCollage from "@/assets/volunteers-collage.jpeg";
+
+const volunteerVideos = [
+  {
+    title: "Safe N Happy Periods volunteer story",
+    src: "https://www.youtube-nocookie.com/embed/zQ5wyQGF6gc",
+  },
+  {
+    title: "Safe N Happy Periods volunteer moments",
+    src: "https://www.youtube-nocookie.com/embed/l26kLPy3VUw",
+  },
+];
 
 export const Route = createFileRoute("/get-involved")({
   head: () => ({
@@ -47,12 +59,11 @@ function GetInvolved() {
           <p className="mt-4 max-w-2xl text-muted-foreground">
             Choose what your contribution funds. Every rupee supports menstrual health education, access, and outreach.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: "Pad Drive", desc: "Sanitary product distribution drives." },
               { title: "Seminar", desc: "Support a school or community seminar." },
               { title: "Hygiene Kits", desc: "Comprehensive monthly kits for one girl." },
-              { title: "Rural Outreach", desc: "Multi-day outreach in remote communities." },
             ].map((card) => (
               <div key={card.title} className="rounded-[8px] border border-border bg-cream p-6">
                 <h3 className="font-display text-xl uppercase">{card.title}</h3>
@@ -69,22 +80,63 @@ function GetInvolved() {
         </div>
       </section>
 
-      <section id="volunteer" className="bg-cream py-12 md:py-16">
+      <section id="volunteer" className="bg-[#eef8f7] py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <UserPlus className="text-coral" size={28} />
-            <h2 className="font-display text-4xl uppercase">Volunteer / Intern</h2>
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <div className="flex items-center gap-4">
+                <UserPlus className="text-coral" size={28} />
+                <h2 className="font-display text-4xl uppercase">Our Volunteers</h2>
+              </div>
+              <div className="mt-5 space-y-4 text-muted-foreground">
+                <p>
+                  Safe N Happy Periods has always been a volunteer-driven non-profit built on the
+                  passion, dedication, and collective efforts of people who believe in our mission.
+                  From conducting awareness sessions and community outreach to supporting campaigns,
+                  content, logistics, and creative initiatives, volunteers remain at the heart of
+                  everything we do.
+                </p>
+                <p>
+                  Over the years, SNHP has welcomed both Indian and international volunteers,
+                  creating a diverse and inclusive community united by a shared mission. Many of our
+                  volunteers have joined us through platforms like ConnectFor and AIESEC, contributing
+                  their skills, time, and ideas to create meaningful impact across communities.
+                </p>
+                <p>
+                  Their support has helped us expand conversations around periods, reach underserved
+                  groups, and build safe spaces for education, empathy, and change.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-6">
+              <img
+                src={volunteersCollage}
+                alt="Safe N Happy Periods volunteer community collage"
+                className="aspect-[4/3] w-full rounded-[8px] border border-border object-cover shadow-lg"
+              />
+            </div>
           </div>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Join a 200+ strong volunteer network, from one-day drives to multi-month internships.
-          </p>
+
+          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {volunteerVideos.map((video) => (
+              <iframe
+                key={video.src}
+                className="aspect-video w-full rounded-[8px] border border-border bg-background shadow-md"
+                src={video.src}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            ))}
+          </div>
+
           <a
             href={VOLUNTEER_INTERN_FORM_URL}
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-coral px-7 py-4 font-semibold text-primary-foreground transition hover:scale-105"
           >
-            Open volunteer / intern form <ArrowRight size={18} />
+            Volunteer with us <ArrowRight size={18} />
           </a>
         </div>
       </section>

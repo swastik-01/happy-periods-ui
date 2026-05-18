@@ -30,15 +30,15 @@ export const NAV: NavItem[] = [
         desc: "Build facilitators",
       },
       { to: "/programmes/yoga", label: "Yoga Sessions", desc: "Periods and menopause" },
-      { to: "/programmes/csr", label: "CSR", desc: "Measurable impact" },
+      { to: "/programmes/csr", label: "Colleges", desc: "Campus awareness" },
     ],
   },
   {
-    label: "Events",
+    label: "Impacts",
     children: [
-      { to: "/events", label: "All Events", desc: "Calendar" },
-      { to: "/events#flagship", label: "Flagship Event", desc: "Our signature gathering" },
-      { to: "/events#other", label: "Other Events", desc: "Throughout the year" },
+      { to: "/events", label: "All Impacts", desc: "Impact stories" },
+      { to: "/events#stories", label: "Impact Stories", desc: "Events and outreach" },
+      { to: "/events#reports", label: "Reports", desc: "Project PDFs" },
     ],
   },
   {
@@ -51,13 +51,11 @@ export const NAV: NavItem[] = [
     ],
   },
   {
-    label: "Impacts",
+    label: "CSR",
     children: [
-      { to: "/resources", label: "All Resources", desc: "Index" },
-      { to: "/resources#reports", label: "Reports", desc: "Annual & impact" },
-      { to: "/resources#guides", label: "Guides", desc: "Practical handbooks" },
-      { to: "/resources#open", label: "Open Resources", desc: "Free downloads" },
-      { to: "/resources#research", label: "Research Papers", desc: "Studies & data" },
+      { to: "/csr", label: "CSR Overview", desc: "Measurable impact" },
+      { to: "/events/csr", label: "CSR Initiatives", desc: "Events and outreach" },
+      { to: "/programmes/impact-partner", label: "Corporate Partnerships", desc: "Long-term support" },
     ],
   },
   {

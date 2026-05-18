@@ -11,7 +11,7 @@ import {
   Handshake,
   Users,
 } from "lucide-react";
-import padDonation from "@/assets/donate.jpg";
+import programmesHero from "@/assets/programmes-hero-school.jpg";
 
 export const Route = createFileRoute("/programmes/")({
   head: () => ({
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/programmes/")({
         content:
           "Education, access, advocacy, and action through school, workplace, trainer, partnership, yoga, and CSR programmes.",
       },
-      { property: "og:image", content: padDonation },
+      { property: "og:image", content: programmesHero },
     ],
   }),
   component: Programmes,
@@ -32,7 +32,7 @@ const items = [
   {
     to: "/programmes/schools",
     icon: GraduationCap,
-    title: "Schools & Colleges",
+    title: "Schools",
     desc: "Menstrual health education, product awareness, yoga, and wellness support for adolescent girls and early menstruators.",
   },
   {
@@ -44,7 +44,7 @@ const items = [
   {
     to: "/programmes/impact-partner",
     icon: Handshake,
-    title: "Corporate Partnership",
+    title: "Community",
     desc: "Long-term partnerships, sponsorships, and community engagement that sustain grassroots impact.",
   },
   {
@@ -62,15 +62,15 @@ const items = [
   {
     to: "/programmes/csr",
     icon: Building2,
-    title: "CSR",
-    desc: "Measurable menstrual health initiatives for underprivileged communities and inclusive social impact.",
+    title: "Colleges",
+    desc: "Campus workshops, student awareness, and youth-led conversations around menstrual health.",
   },
 ];
 
 function Programmes() {
   return (
     <SiteLayout>
-      <PageHero eyebrow="Programmes" title="Our" highlight="programs" image={padDonation}>
+      <PageHero eyebrow="Programmes" title="Our" highlight="programs" image={programmesHero}>
         Creating impact through education, access, advocacy, and action.
         <br />
         From classrooms and campuses to corporate spaces and underprivileged communities, every Safe n

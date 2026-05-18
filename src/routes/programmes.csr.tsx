@@ -1,62 +1,60 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProgrammePage } from "@/components/site/ProgrammePage";
-import stage from "@/assets/home/stage.jpg";
-import field from "@/assets/home/field.jpg";
-import outreach from "@/assets/home/outreach.jpg";
+import schoolHero from "@/assets/GallerySchools/school-hero.jpeg";
+import schoolSessionOne from "@/assets/GallerySchools/school-session.jpeg";
+import schoolSessionTwo from "@/assets/GallerySchools/school-1.jpeg";
+import schoolSessionThree from "@/assets/GallerySchools/school-2.jpeg";
+import schoolSessionFour from "@/assets/GallerySchools/school-3.jpeg";
 
 export const Route = createFileRoute("/programmes/csr")({
   head: () => ({
     meta: [
-      { title: "CSR - Safe n' Happy Periods" },
+      { title: "Colleges - Safe n' Happy Periods" },
       {
         name: "description",
         content:
-          "CSR menstrual health initiatives combining education, awareness, access, and community engagement.",
+          "Menstrual health education, awareness, wellness, and youth-led conversations for colleges.",
       },
     ],
   }),
   component: () => (
     <ProgrammePage
       data={{
-        slug: "csr",
+        slug: "colleges",
         eyebrow: "Programme",
-        title: "CSR.",
+        title: "Colleges.",
         intro:
-          "Impactful menstrual health initiatives for measurable social change and inclusive community support.",
-        hero: stage,
+          "Campus conversations that help young adults build informed, stigma-free, and supportive menstrual health spaces.",
+        hero: schoolHero,
         showHeroRegister: true,
         showApply: false,
         whatWeDo: {
-          heading: "CSR initiatives built around dignity and access.",
+          heading: "College programs for open, informed conversations.",
           paragraphs: [
-            "At Safe n Happy Periods, we design impactful menstrual health initiatives that combine education, awareness, accessibility, and community engagement. Our programs are created to address real challenges faced by menstruators across different social and economic backgrounds while ensuring dignity and inclusivity remain at the center of every intervention.",
-            "We collaborate with schools, colleges, corporates, NGOs, and grassroots communities to create safe spaces for open conversations around menstruation. Through workshops, awareness drives, community outreach, pad distribution initiatives, and advocacy campaigns, we work towards normalizing menstrual health and breaking long-standing taboos.",
-            "Every initiative is designed to create sustainable awareness, encourage behavioral change, and improve access to menstrual health resources for communities that are often overlooked.",
+            "SNHP works with colleges to create safe spaces where students can discuss menstruation, health, hygiene, body literacy, and emotional well-being without shame or hesitation.",
+            "Our college sessions combine menstrual health education, product awareness, wellness practices, interactive dialogue, and youth-led advocacy. The aim is to build empathy, confidence, and inclusive campus cultures where periods are understood and normalized.",
           ],
           bullets: [
-            "Menstrual health awareness sessions",
-            "Community engagement programs",
-            "Employee sensitization workshops",
-            "Rural and underprivileged community outreach",
-            "Hygiene resource distribution drives",
-            "Youth-led advocacy and education initiatives",
+            "Menstrual health and hygiene seminars",
+            "Period stigma and myth-breaking conversations",
+            "Product awareness and safe practices",
+            "Yoga and wellness support",
+            "Student-led awareness and advocacy",
           ],
         },
         impact: {
-          heading: "Inclusive, informed, and empowered communities.",
-          paragraphs: [
-            "Over the years, Safe n Happy Periods has worked with diverse communities, organizations, and institutions to drive meaningful menstrual health conversations and on-ground change.",
-            "In collaboration with PepsiCo in Ghana, SNHP successfully conducted a large-scale menstrual health awareness initiative reaching more than 1,000 participants through three impactful sessions. The program focused on menstrual education, hygiene awareness, stigma reduction, and creating safe spaces for dialogue, empowering participants with accurate information and confidence.",
-            "Through the Oasis CSR initiative, SNHP conducted menstrual health awareness sessions for sex workers in Kamathipura and Grant Road. These sessions focused on menstrual hygiene, reproductive health awareness, access to safe practices, and breaking the stigma surrounding periods within marginalized communities.",
-            "The initiative aimed to provide education, support, and dignity to individuals who are often excluded from mainstream healthcare conversations. Through every project, SNHP continues to build inclusive, informed, and empowered communities, one conversation at a time.",
-          ],
+          heading: "Youth-led change across campuses.",
           stats: [
-            { num: "1K+", label: "Ghana participants" },
-            { num: "3", label: "PepsiCo sessions" },
-            { num: "2", label: "Oasis outreach areas" },
-            { num: "CSR", label: "Measurable impact" },
+            { num: "60+", label: "Schools & colleges reached" },
+            { num: "13K+", label: "Students reached" },
+            { num: "IIT", label: "Campus invitation" },
+            { num: "SNHP", label: "Youth awareness" },
           ],
-          images: [field, outreach],
+          paragraphs: [
+            "Across colleges and youth communities, SNHP has helped students move from silence and discomfort to informed, open conversations around menstrual health.",
+            "College programs also create opportunities for young volunteers, peer advocates, and student groups to carry menstrual awareness forward within their own communities.",
+          ],
+          images: [schoolSessionOne, schoolSessionTwo, schoolSessionThree, schoolSessionFour],
         },
       }}
     />

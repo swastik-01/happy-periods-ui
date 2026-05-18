@@ -22,7 +22,7 @@ export const Route = createFileRoute("/programmes/schools")({
       data={{
         slug: "schools",
         eyebrow: "Programme",
-        title: "Schools & Colleges.",
+        title: "Schools",
         intro:
           "Safe, informed, and stigma-free menstrual health education for adolescent girls and early menstruators.",
         hero: schoolHero,
@@ -32,9 +32,7 @@ export const Route = createFileRoute("/programmes/schools")({
           heading: "Safe, informed, and supportive school spaces.",
           paragraphs: [
             "SNHP works with schools to create safe, informed, and supportive spaces for adolescent girls and early menstruators.",
-            "Our sessions cover puberty, periods, body changes, menstrual hygiene, product awareness, and healthy practices in an age-appropriate way.",
-            "We also include simple yoga and wellness tools to help students manage discomfort, stress, and emotional changes.",
-            "Every session is designed to build confidence, reduce fear, and make menstrual health stigma-free from an early age.",
+            "Our sessions cover puberty, periods, body changes, menstrual hygiene, product awareness, and healthy practices in an age-appropriate way.We also include simple yoga and wellness tools to help students manage discomfort, stress, and emotional changes.Every session is designed to build confidence, reduce fear, and make menstrual health stigma-free from an early age.",
           ],
         },
         impact: {
