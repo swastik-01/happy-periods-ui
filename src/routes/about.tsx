@@ -11,7 +11,7 @@ import swapnil from "@/assets/team/swapnil-new.jpeg";
 import mukesh from "@/assets/team/mukesh.png";
 import anisha from "@/assets/team/anisha-nair.jpeg";
 import aboutHero from "@/assets/about-hero.jpg";
-import storyWorkshop from "@/assets/about-story-workshop.jpg";
+import storyWorkshop from "@/assets/about-how-it-started.jpg";
 
 const AMODINI_URL = "https://amodinifoundation.org/";
 
@@ -86,33 +86,63 @@ const team = [
 const milestones = [
   {
     year: "2016",
-    title: "Foundation Established",
-    body: "Safe n Happy Periods began as a movement for shame-free, pain-free periods.",
+    title: "Safe n Happy Periods - Established",
+    body: "",
   },
   {
     year: "2016",
-    title: "First School Program",
-    body: "Our first NMMC school outreach opened menstrual health conversations in municipal schools.",
+    title: "First Program - Govt. Project",
+    body: "Period sessions in Navi Mumbai Municipal Corporation (NMMC) Schools 35 + Schools and 15 Ward Offices",
+  },
+  {
+    year: "2017",
+    title: "Rural Outreach with Mijwan",
+    body: "Shabana Azmi Ji recognized and appreciated our work at Mijwan and nationwide at the Menstrual Conclave Delhi.",
   },
   {
     year: "2018",
-    title: "Recognition & Reach",
-    body: "Shabana Azmi Ji recognized the work at the Menstrual Conclave.",
+    title: "Recognition by Shabana Ji",
+    body: "Workshops at Mijwan Welfare, an NGO by Shabana Azmi Ji in Phoolpur, UP.",
   },
   {
-    year: "2021",
+    year: "2018",
+    title: "Workshop at IIT Mumbai",
+    body: "SNHP was invited at IIT campus to talk about the menstrual landscape of India.",
+  },
+  {
+    year: "2018",
+    title: "CSR Project with Pepsi at Ghana-Africa",
+    body: "2 schools with over 1000+ girls and boys at schools in Accra, Ghana and Nairobi, Kenya. Later with other corporates like Wipro, Shoppers Stop, Rave Technologies, etc.",
+  },
+  {
+    year: "2019",
+    title: "Working with Sex Workers",
+    body: "Working with trafficked women in red light areas of Kamathipura and Grant Road together with Oasis International and Rave Technologies.",
+  },
+  {
+    year: "2020",
+    title: "International Panel Discussion",
+    body: "SNHP was invited to speak at a panel discussion with speakers from all over the world.",
+  },
+  {
+    year: "2020",
     title: "Pandora's Box: Lifting the Lid on Menstruation",
-    body: "Featured in Pandora's Box, a 75-minute documentary on period poverty and stigma.",
+    body: "Featured in Pandora's Box, a 75-minute documentary made by an all-women crew on period poverty and stigma.",
+  },
+  {
+    year: "2020",
+    title: "Collab with Radio City",
+    body: "Conversations and pad donations in villages in Rajasthan.",
   },
   {
     year: "2022",
-    title: "Corporate Partnerships",
-    body: "Expanded CSR and workplace partnerships, including PepsiCo Ghana.",
+    title: "Awarded by NMMC on Women's Day",
+    body: "SNHP's contributions were appreciated by NMMC.",
   },
   {
-    year: "2024",
-    title: "Specialized Programs",
-    body: "Scaled yoga and train-the-trainer programs for wider community education.",
+    year: "2023",
+    title: "Corporate Workshops",
+    body: "Creating period-friendly workplaces with Future Generali.",
   },
 ];
 
@@ -170,23 +200,13 @@ function About() {
               </h2>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  Safe n Happy Periods began in February 2016, when Sarika Gupta set out to
-                  challenge the silence and stigma surrounding menstruation. What started as a small
-                  initiative from a living room soon grew into a powerful movement dedicated to
-                  making menstrual health education accessible, conversations more open, and hygiene
-                  resources available to all.
+                  Safe N' Happy Periods (SNHP) is a flagship project of AMODINI Foundation (a non-profit in Mumbai), which is a donor & volunteer-supported initiative
                 </p>
                 <p>
-                  Built on empathy, dignity, and the belief that no one should feel shame for a
-                  natural biological process, SNHP works to create a world where periods are
-                  understood, supported, and normalized. Through awareness workshops, community
-                  outreach, campaigns, and on-ground initiatives, Safe n Happy Periods empowers
-                  individuals with knowledge, confidence, and access to menstrual care.
+                  It began in February 2016, when Sarika Gupta set out to challenge the silence and stigma surrounding menstruation. What started as a small initiative in a living room soon grew into a powerful worldwide movement dedicated to making menstrual health education accessible to all. SNHP works to create a world where periods are understood, supported, and normalized. Through awareness workshops, community outreach, campaigns, and on-ground initiatives, Safe n Happy Periods empowers individuals with knowledge, confidence, and access to menstrual care.
                 </p>
                 <p>
-                  From colleges and communities to collaborative campaigns and resource distribution
-                  drives, SNHP continues to break taboos and spark conversations that create lasting
-                  social change.
+                  From colleges and communities to collaborative campaigns and resource distribution drives, SNHP continues to break taboos and spark conversations that create lasting social change.
                 </p>
                 <blockquote className="border-l-4 border-primary pl-5 font-semibold text-foreground">
                   "We believe that open, shame-free conversations about menstruation are the first
@@ -206,7 +226,7 @@ function About() {
             {[
               {
                 title: "Mission",
-                body: "To eliminate period poverty and stigma through comprehensive education, accessible menstrual products, and inclusive conversations that normalize menstruation as a natural biological process.",
+                body: "To eliminate period poverty and stigma through comprehensive education, accessible menstrual products, and inclusive conversations that normalize menstruation.",
               },
               {
                 title: "Vision",
@@ -241,18 +261,13 @@ function About() {
           <a href={AMODINI_URL} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:underline">
             Amodini Foundation
           </a>{" "}
-          was born from a vision to create a society where girls and women live with dignity, free from taboos and limitations. "Amodini" means
-          joyful girl or woman, and that lies at the heart of all we do.
+          breaks taboos, spreads awareness, and builds confidence through impactful programs in Menstrual Health & Hygiene (MHH) and POSH (Prevention of Sexual Harassment).
         </p>
         <p>
-          What began as a passionate initiative to break menstrual health taboos has grown into a
-          multifaceted organization addressing pressing issues of menstrual health and POSH
-          awareness, critical areas that impact women's confidence, safety, and empowerment.
+          "Amodini" means joyful girl or woman, and that lies at the heart of all we do. What began as a passionate initiative to break menstrual health taboos has grown into an organization addressing critical areas that impact women's confidence, safety, and empowerment. 
         </p>
         <p>
-          Today, we are proud to have reached thousands of individuals across schools, colleges,
-          communities, and workplaces, creating spaces for open dialogue, education, and
-          transformative change.
+          Today, we are proud to have reached thousands of individuals across schools, colleges, communities, and workplaces, creating spaces for open dialogue, education, and transformative change.
         </p>
       </Section>
 
@@ -281,7 +296,10 @@ function About() {
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-primary/15 font-display text-6xl text-primary">
-                      {m.initials}
+                      {m.name
+                        .split(" ")
+                        .map((word) => word[0])
+                        .join("")}
                     </div>
                   )}
                 </div>
@@ -305,15 +323,15 @@ function About() {
         </div>
       </section>
 
-      <section id="milestones" className="py-14">
+      <section id="milestones" className="py-8 md:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Milestones</span>
-          <h2 className="mt-3 font-display text-4xl uppercase lg:text-5xl">
+          <h2 className="mt-2 font-display text-3xl uppercase lg:text-4xl">
             From small beginnings to bigger change.
           </h2>
-          <div className="relative mt-12">
-            <div className="absolute bottom-6 left-2 top-2 w-px bg-primary/30 lg:left-1/2 lg:-translate-x-1/2" />
-            <div className="space-y-8 lg:space-y-0">
+          <div className="relative mt-6">
+            <div className="absolute bottom-3 left-1.5 top-1.5 w-px bg-primary/30 lg:left-1/2 lg:-translate-x-1/2" />
+            <div className="space-y-4 lg:space-y-5">
               {milestones.map((m, i) => (
                 <motion.div
                   key={m.title}
@@ -321,23 +339,25 @@ function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className={`relative grid grid-cols-1 gap-4 pl-9 lg:grid-cols-2 lg:gap-10 lg:pl-0 ${
-                    i % 2 === 0 ? "" : "lg:[&>div]:col-start-2"
-                  }`}
+                  className="relative grid grid-cols-1 gap-2 pl-7 lg:grid-cols-2 lg:gap-3 lg:pl-0"
                 >
-                  <div className="relative py-1">
-                    <span
-                      className={`absolute top-2 h-4 w-4 rounded-full border-4 border-background bg-primary lg:top-1/2 lg:-translate-y-1/2 ${
-                        i % 2 === 0
-                          ? "-left-[2.1rem] lg:-right-[2.45rem] lg:left-auto"
-                          : "-left-[2.1rem] lg:-left-[2.55rem]"
-                      }`}
-                    />
-                    <p className="font-display text-3xl text-primary">{m.year}</p>
-                    <h3 className="mt-3 font-display text-3xl uppercase text-foreground">
+                  <span className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-[3px] border-background bg-primary lg:left-1/2 lg:-translate-x-1/2" />
+                  <div
+                    className={`lg:max-w-[22rem] ${
+                      i % 2 === 0
+                        ? "lg:ml-auto lg:pr-4 lg:text-right"
+                        : "lg:col-start-2 lg:pl-4"
+                    }`}
+                  >
+                    <p className="font-display text-xl text-primary">{m.year}</p>
+                    <h3 className="mt-1 font-display text-xl uppercase leading-none text-foreground">
                       {m.title}
                     </h3>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">{m.body}</p>
+                    {m.body && (
+                      <p className="mt-1 whitespace-pre-line text-xs leading-snug text-muted-foreground">
+                        {m.body}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               ))}

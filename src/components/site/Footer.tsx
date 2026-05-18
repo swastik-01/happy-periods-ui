@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Globe, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 import logo from "@/assets/logo-main.svg";
 
@@ -78,12 +78,6 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Globe size={14} className="mt-0.5 shrink-0 text-coral" />
-              <a href="https://www.safenhappyperiods.org" className="hover:text-coral">
-                www.safenhappyperiods.org
-              </a>
-            </li>
-            <li className="flex items-start gap-2">
               <Mail size={14} className="mt-0.5 shrink-0 text-coral" />
               <a href="mailto:connect@safenhappyperiods.org" className="hover:text-coral">
                 connect@safenhappyperiods.org
@@ -114,33 +108,28 @@ export function Footer() {
               Join
             </button>
           </div>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground dark:text-cream/80">
-            <a
-              href="https://amodinifoundation.org/privacy.html"
-              className="hover:text-coral"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="https://amodinifoundation.org/terms.html"
-              className="hover:text-coral"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Terms & Conditions
-            </a>
-          </div>
         </div>
       </div>
 
       <div className="border-t border-border dark:border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-3 text-[11px] text-muted-foreground dark:text-cream/60 sm:flex-row sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 text-[11px] text-muted-foreground dark:text-cream/60 sm:px-6 lg:px-8">
           <p>&copy; {new Date().getFullYear()} Safe n' Happy Periods. All rights reserved.</p>
-          <Link to="/donate" className="hover:text-coral">
-            Support the mission
-          </Link>
+          <a
+            href="https://amodinifoundation.org/privacy.html"
+            className="hover:text-coral"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="https://amodinifoundation.org/terms.html"
+            className="hover:text-coral"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terms & Conditions
+          </a>
         </div>
       </div>
     </footer>

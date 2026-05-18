@@ -27,13 +27,14 @@ const programs = [
   { icon: GraduationCap, title: "Awareness Workshops", desc: "Menstrual health & hygiene sessions for schools, colleges, and rural communities.", to: "/programmes/schools" },
   { icon: Flower2, title: "Yoga Sessions", desc: "Movement, breathing, and relaxation practices for menstrual wellness.", to: "/programmes/yoga" },
   { icon: Gift, title: "Pad Donation", desc: "Sanitary product drives reaching the most underprivileged communities.", to: "/donate" },
+  { icon: Sparkles, title: "Perios Simulation", desc: "SNHP conducts period simulation workshops for young men in colleges and workplaces", to: "/programmes" },
 ];
 
 const stats = [
   { num: "250+", label: "Workshops" },
   { num: "25,000+", label: "Beneficiaries Reached" },
   { num: "60+", label: "Schools & Colleges" },
-  { num: "100,000+", label: "Sanitary Pads" },
+  { num: "100,000+", label: "Sanitary Pads Donated" },
 ];
 
 const homeVideoId = "fki-a5Vj5M8";
@@ -50,7 +51,7 @@ function Home() {
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 pt-6 pb-10 sm:px-6 lg:grid-cols-12 lg:px-8 lg:pt-8 lg:pb-14">
           <motion.div className="min-w-0 lg:col-span-5">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-coral mb-6">
-              <Sparkles size={14} /> Since 2014
+              <Sparkles size={14} /> Since 2016
             </span>
             <h1 className="font-display text-4xl sm:text-6xl lg:text-[6.5rem] leading-[0.88] uppercase">
               <span className="whitespace-nowrap">Shame-Free.</span><br />
@@ -65,7 +66,7 @@ function Home() {
                 to="/donate"
                 className="inline-flex items-center gap-2 bg-coral text-primary-foreground px-7 py-4 rounded-full font-semibold hover:scale-105 transition shadow-2xl shadow-coral/40"
               >
-                Make a donation <ArrowRight size={18} />
+                Donate <ArrowRight size={18} />
               </Link>
               <Link
                 to="/programmes"
@@ -116,7 +117,7 @@ function Home() {
               Why is something so natural still surrounded by silence?
             </p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              In India, <strong>71% of girls</strong> learn about menstruation only after experiencing their first period. While awareness around menstrual products is growing, millions still struggle with limited access, misinformation, and lack of support especially in rural communities. Period stigma continues to impact education, confidence, health, and dignity, making menstrual well-being one of the most overlooked aspects of everyday life.
+              In India, <strong>71% of girls</strong> learn about menstruation only after attaining MENARCHE. While awareness around menstrual products is growing, millions still struggle with limited access, misinformation, and lack of support especially in rural communities. Period stigma continues to impact education, confidence, health, and dignity, making menstrual well-being one of the most overlooked aspects of everyday life.
             </p>
             <Link
               to="/about"
@@ -135,15 +136,13 @@ function Home() {
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-coral">What we do</span>
               <h2 className="font-display text-5xl lg:text-6xl uppercase mt-3">
-                Action across <span className="text-coral">three fronts.</span>
+                Action across <span className="text-coral">four fronts.</span>
               </h2>
             </div>
-            <Link to="/programmes" className="text-secondary-foreground/80 hover:text-primary inline-flex items-center gap-2">
-              Explore all programs <ArrowRight size={18} />
-            </Link>
+            
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {programs.map((p, i) => (
               <motion.div
                 key={p.title}
@@ -177,7 +176,7 @@ function Home() {
               Pandora's Box.
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              In 2021, Safe n Happy Periods was featured in Pandora's Box: Lifting the Lid on Menstruation, a powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma. The documentary shed light on the urgent need for awareness, accessibility, and open conversations around menstruation, while showcasing SNHP's efforts toward creating a more informed and stigma-free society.
+              In 2021, Safe n Happy Periods was featured in Pandora's Box: Lifting the Lid on Menstruation (change red colour), a powerful 75-minute documentary highlighting the global crisis of period poverty and menstrual stigma. Made by all women crew, this showcased SNHP's efforts toward creating a more informed and stigma-free society.
             </p>
           </div>
           <div className="min-w-0 lg:col-span-8">

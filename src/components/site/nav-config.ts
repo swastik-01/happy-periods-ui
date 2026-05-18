@@ -6,7 +6,7 @@ export const NAV: NavItem[] = [
   {
     label: "About",
     children: [
-      { to: "/about#story", label: "The Story", desc: "How SNHP began" },
+      { to: "/about", label: "The Story", desc: "Who we are" },
       { to: "/about#mission", label: "Mission & Vision", desc: "What drives us" },
       { to: "/about#amodini", label: "Amodini Foundation", desc: "Our parent org" },
       { to: "/about#team", label: "Our Team", desc: "The humans behind it" },
